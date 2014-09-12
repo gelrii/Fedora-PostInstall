@@ -88,7 +88,7 @@ Remove_KDE_Packages () {
                 case $opt in
                         y) k=0
                         echo "Removing packages..."
-                        yum -y remove gwenview dragon amarok
+                        yum remove gwenview dragon amarok
                         echo "Removed useless KDE packages."
                         ;;
                         n) k=0
@@ -113,7 +113,7 @@ Remove_Gnome_Packages () {
                 case $opt in
                         y) g=0
                         echo "Removing packages..."
-                        yum -y remove rhythmbox empathy totem evolution shotwell cheese
+                        yum remove rhythmbox empathy totem evolution shotwell cheese
                         echo "Removed useless Gnome packages."
                         ;;
                         n) g=0
@@ -140,7 +140,7 @@ Update_Java () {
                 case $opt in
                         y) a=4
                         echo "Updating your OpenJDK Java Runtime Environment."
-                        yum -y remove java* && yum -y install java-1.8.0-openjdk
+                        yum remove java* && yum -y install java-1.8.0-openjdk
                         echo "Removed OpenJDK 7 JRE and installed OpenJDK 8 JRE."
                         ;;
                         n) a=4
@@ -189,7 +189,7 @@ Install_Packages () {
                 case $opt in
                         y) a=6
                         echo "Installing new packages..."
-                        yum -y install htop nano xchat vlc lm_sensors iotop iftop gcc gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
+                        yum install htop nano xchat vlc lm_sensors iotop iftop gcc gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
                         echo "Installed new packages."
                         ;;
                         n) a=6
@@ -287,7 +287,7 @@ Fix_Fonts () {
                         echo "Installing Infinality..."
 # Note to script maintainers: The first command in the below line will need updating when the repo is updated.
 # Check this page every so often to see if there have been updates: http://www.infinality.net/blog/infinality-repository/
-                        rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm && yum -y install freetype-infinality fontconfig-infinality
+                        rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm && yum install freetype-infinality fontconfig-infinality
                         echo "Installed Infinality. Changes to font rendering may not be visible until a reboot."
                         ;;
                         n) a=10
@@ -336,7 +336,7 @@ Install_POL () {
                         y) a=12
                         echo "Installing PlayOnLinux..."
 # Note to script maintainers: The first command in the below line will need updating when the repo is updated.
-                        wget -O /tmp/playonlinux.rpm http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm && yum -y install /tmp/playonlinux.rpm && yum -y install playonlinux
+                        wget -O /tmp/playonlinux.rpm http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm && yum -y install /tmp/playonlinux.rpm && yum install playonlinux
                         echo "Installed PlayOnLinux."
                         ;;
                         n) a=12
