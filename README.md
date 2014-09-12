@@ -47,3 +47,4 @@ Paste the above command into a terminal to execute it.
 - v1.6.0 - Added installer for ownCloud Desktop Sync Client.
 - v1.7.0 - Added installer for PlayOnLinux.
 - v1.8.0 - Removed the VirtualBox section (causes issues installing before kernel update is complete) and replaced it with a ZFS on Linux install option.
+- v1.8.1 - Added 'tuned' to the useful package installer for CPU frequency scaling.
