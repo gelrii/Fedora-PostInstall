@@ -27,6 +27,7 @@ Paste the above command into a terminal to execute it.
 - Integrate support for automatically discovering what OS is running and running different scripts accordingly (a meta postinstall script).
 - Integrate Google Chrome installation support for those that need Flash.
 - Integrate automatic downloader for the latest Tor browser bundle. (Pipe the downloads.html page into curl and grep out the current 64-bit .tar.gz link?)
+- Give the script the ability to detect whether or not it is being run as root, and quit if it is not. This is to prevent the script asking for multiple sudo passwords along the way.
 
 
 #Changelog
