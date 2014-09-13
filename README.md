@@ -4,7 +4,7 @@ Fedora-PostInstall
 A useful script to facilitate speedy deployment of Fedora desktop and laptop environments.
 
 You can run this script quickly with the following command:
-> curl -o /tmp/fedora.sh https://github.com/asdf-git/Fedora-PostInstall/raw/master/fedora.sh && chmod +x /tmp/fedora.sh && sudo sh /tmp/fedora.sh
+> curl -o /tmp/fedora.sh https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/fedora.sh && chmod +x /tmp/fedora.sh && sudo sh /tmp/fedora.sh
 
 Paste the above command into a terminal to execute it.
 
