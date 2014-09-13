@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fedora PostInstall Script
-# v1.9.0 (20140913)
+# v1.9.1 (20140913)
 
 a=1
 k=0
@@ -363,4 +363,5 @@ until [ $a = 0 ]; do
         Install_ownCloud
         Install_POL
 wget -O /tmp/screenfetch https://github.com/KittyKatt/screenFetch/raw/master/screenfetch-dev && chmod +x /tmp/screenfetch && clear && echo "Success! Enjoy Your System" && echo "" && /tmp/screenfetch
+exit
 done
