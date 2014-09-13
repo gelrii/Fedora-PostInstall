@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fedora PostInstall Script
-# v1.8.1 (20140912)
+# v1.9.0 (20140913)
 
 a=1
 k=0
@@ -362,21 +362,5 @@ until [ $a = 0 ]; do
         Fix_Fonts
         Install_ownCloud
         Install_POL
-	echo " "
-	echo "${B}            FFFFFFFFFFFF${R}"
-	echo "${B}         FFFFFFFFFFFFFFFFFF${R}"
-	echo "${B}        FFFFFFFFFF${W}#######${B}FFF${R}"
-	echo "${B}       FFFFFFFFFF${W}#######${T}ff${B}FFF${R}"
-	echo "${B}      FFFFFFFFFFF${W}##${B}FFFFF${T}fff${B}FFF${R}"
-	echo "${B}     FFFFFFFFFFFF${W}##${B}FFFFFF${T}ff${B}FFFF${R}"
-	echo "${B}     FFFFFF${T}fff${W}########${T}fffff${B}FFFF${R}"
-	echo "${B}     FFFF${T}fffff${W}########${T}fff${B}FFFFFF${R}"
-	echo "${B}     FFFF${T}ff${B}FFFFFF${W}##${B}FFFFFFFFFFFF${R}"
-	echo "${B}      FFF${T}fff${B}FFFFF${W}##${B}FFFFFFFFFFF${R}"
-	echo "${B}       FFF${T}ff${W}#######${B}FFFFFFFFFF${R}"
-	echo "${B}        FFF${W}#######${B}FFFFFFFFFF${R}"
-	echo "${B}         FFFFFFFFFFFFFFFFFF${R}"
-	echo "${B}            FFFFFFFFFFFF   ${W}Success!${R}"
-	echo " "
-        exit
+wget -O /tmp/screenfetch https://github.com/KittyKatt/screenFetch/raw/master/screenfetch-dev && chmod +x /tmp/screenfetch && clear && echo "Success! Enjoy Your System" && echo "" && /tmp/screenfetch
 done
