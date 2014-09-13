@@ -49,3 +49,4 @@ Paste the above command into a terminal to execute it.
 - v1.8.0 - Removed the VirtualBox section (causes issues installing before kernel update is complete) and replaced it with a ZFS on Linux install option.
 - v1.8.1 - Added 'tuned' to the useful package installer for CPU frequency scaling.
 - v1.9.0 - Added auto-updating ScreenFetch to end of script.
+- v1.9.1 - Fixed issue with ScreenFetch looping instead of terminating script.
