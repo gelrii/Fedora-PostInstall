@@ -362,6 +362,6 @@ until [ $a = 0 ]; do
         Fix_Fonts
         Install_ownCloud
         Install_POL
-wget -O /tmp/screenfetch https://github.com/KittyKatt/screenFetch/raw/master/screenfetch-dev && chmod +x /tmp/screenfetch && clear && echo "Success! Enjoy Your System" && echo "" && /tmp/screenfetch
+curl -o /tmp/screenfetch https://github.com/KittyKatt/screenFetch/raw/master/screenfetch-dev && chmod +x /tmp/screenfetch && clear && echo "Success! Enjoy Your System" && echo "" && /tmp/screenfetch
 exit
 done
