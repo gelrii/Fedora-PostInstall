@@ -189,7 +189,7 @@ Install_Packages () {
                 case $opt in
                         y) a=6
                         echo "Installing new packages..."
-                        yum install htop nano tuned xchat vlc lm_sensors iotop iftop gcc gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
+                        yum install htop nano tuned xchat vlc lm_sensors iotop iftop gcc kernel-headers kernel-devel gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
                         echo "Installed new packages."
                         ;;
                         n) a=6
