@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fedora PostInstall Script
-# v1.9.1 (20140913)
+# v1.9.2 (20140919)
 
 a=1
 k=0
