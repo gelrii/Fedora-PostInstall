@@ -13,6 +13,4 @@ no script available for your Fedora version.
 
 "
 
-curl -o /tmp/fedora.sh https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/fedora$(rpm -E %fedora).sh
-chmod +x /tmp/fedora$(rpm -E %fedora).sh
-sudo sh /tmp/fedora$(rpm -E %fedora).sh
+curl -fsSL https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/fedora$(rpm -E %fedora).sh | sh
