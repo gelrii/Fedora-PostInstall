@@ -53,8 +53,6 @@ clear
  :---------------------://            compatible, but have not been tested.
 "
 
-echo $0 $v #echo current file name and version to terminal
-
 Enable_RPMFusion () {
         while [ $a = 1 ]; do
                 echo " "
