@@ -31,16 +31,16 @@ clear
  :----    oNMMMMMMMMMNho     .----:   Please answer with Y or N,
  :--      +shhhMMMmhhy++   .------    or enter Q at any prompt to quit the script.
  :-      -----:MMMd--------------:    
- :-     ------/MMMd-------------;     
- :-    ..----/hMMMy------------:      This script is optimised and tested on
- :-- :dMNdhhdNMMNo------------;       Fedora 20.
- :---:sdNMMMMNds:------------:        
- :------:://:-------------::          Earlier or later Fedora releases may be
- :---------------------://            compatible, but have not been tested.
-
+ :-     ------/MMMd-------------;     This script is optimised and tested on
+ :-    ..----/hMMMy------------:      Fedora 20.
+ :-- :dMNdhhdNMMNo------------;       
+ :---:sdNMMMMNds:------------:        Earlier or later Fedora releases may be
+ :------:://:-------------::          compatible, but have not been tested.
+ :---------------------://            
+$0 $v
 "
 
-echo $0 $v #echo current file name and version to terminal
+echo  #echo current file name and version to terminal
 
 Enable_RPMFusion () {
         while [ $a = 1 ]; do
