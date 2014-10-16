@@ -19,7 +19,7 @@ R=$(tput sgr0)
 
 clear
 
-/bin/cat <<'FedoraLogo'
+/bin/echo "
            /:-------------:\          #############################################
         :-------------------::        # Welcome to the Fedora PostInstall Script! #
       :-----------/shhOHbmp---:\      #############################################
@@ -37,9 +37,10 @@ clear
  :---:sdNMMMMNds:------------:        
  :------:://:-------------::          Earlier or later Fedora releases may be
  :---------------------://            compatible, but have not been tested.
-FedoraLogo
 
-echo "" && echo $0 $v #echo current file name and version to terminal
+"
+
+echo $0 $v #echo current file name and version to terminal
 
 Enable_RPMFusion () {
         while [ $a = 1 ]; do
