@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# Fedora PostInstall Script
-# v1.9.2 (20140919)
+# Fedora 20 PostInstall Script
+v="v1.10 (20141016)"
+
+if (( $EUID != 0 )); then
+  /bin/echo "This script must be run as root. Type in 'sudo $0' to run it as root."
+  exit 1
+fi
 
 a=1
 k=0
@@ -15,24 +20,27 @@ R=$(tput sgr0)
 clear
 
 /bin/cat <<'FedoraLogo'
-           /:-------------:\          
-        :-------------------::        
-      :-----------/shhOHbmp---:\      
+           /:-------------:\          #############################################
+        :-------------------::        # Welcome to the Fedora PostInstall Script! #
+      :-----------/shhOHbmp---:\      #############################################
     /-----------omMMMNNNMMD  ---:     
-   :-----------sMMMMNMNMP     ---:    Welcome to the Fedora PostInstall Script!
-  :-----------:MMMdP-----      ---    
- ,------------:MMMd------      ---:   
+   :-----------sMMMMNMNMP     ---:    
+  :-----------:MMMdP-----      ---    You will be asked a series of questions to
+ ,------------:MMMd------      ---:   help us configure your system.
  :------------:MMMd-----      .---:   
- :----    oNMMMMMMMMMNho     .----:   
- :--      +shhhMMMmhhy++   .------    
+ :----    oNMMMMMMMMMNho     .----:   Please answer with Y or N,
+ :--      +shhhMMMmhhy++   .------    or enter Q at any prompt to quit the script.
  :-      -----:MMMd--------------:    
  :-     ------/MMMd-------------;     
- :-    ..----/hMMMy------------:      
- :-- :dMNdhhdNMMNo------------;       
- :---:sdNMMMMNds:------------:        Please Run this Script as Root
- :------:://:-------------::          Enter 'q' At Any Prompt to Quit
- :---------------------://           
+ :-    ..----/hMMMy------------:      This script is optimised and tested on
+ :-- :dMNdhhdNMMNo------------;       Fedora 20.
+ :---:sdNMMMMNds:------------:        
+ :------:://:-------------::          Earlier or later Fedora releases may be
+ :---------------------://            compatible, but have not been tested.
+
 FedoraLogo
+
+echo $0 $v #echo current file name and version to terminal
 
 Enable_RPMFusion () {
         while [ $a = 1 ]; do
