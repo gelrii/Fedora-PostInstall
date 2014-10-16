@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fedora 20 PostInstall Script
-v="v1.10 (20141016)"
+version="1.10 (20141016)"
 
 if (( $EUID != 0 )); then
   /bin/echo "This script must be run as root. Type in 'sudo $0' to run it as root."
@@ -24,19 +24,19 @@ clear
         :-------------------::        # Welcome to the Fedora PostInstall Script! #
       :-----------/shhOHbmp---:\      #############################################
     /-----------omMMMNNNMMD  ---:     
-   :-----------sMMMMNMNMP     ---:    
-  :-----------:MMMdP-----      ---    You will be asked a series of questions to
- ,------------:MMMd------      ---:   help us configure your system.
- :------------:MMMd-----      .---:   
- :----    oNMMMMMMMMMNho     .----:   Please answer with Y or N,
- :--      +shhhMMMmhhy++   .------    or enter Q at any prompt to quit the script.
- :-      -----:MMMd--------------:    
- :-     ------/MMMd-------------;     This script is optimised and tested on
- :-    ..----/hMMMy------------:      Fedora 20.
- :-- :dMNdhhdNMMNo------------;       
- :---:sdNMMMMNds:------------:        Earlier or later Fedora releases may be
- :------:://:-------------::          compatible, but have not been tested.
- :---------------------://            
+   :-----------sMMMMNMNMP     ---:    You are running $0 version $version.
+  :-----------:MMMdP-----      ---    
+ ,------------:MMMd------      ---:   You will be asked a series of questions to
+ :------------:MMMd-----      .---:   help us configure your system.
+ :----    oNMMMMMMMMMNho     .----:   
+ :--      +shhhMMMmhhy++   .------    Please answer with Y or N,
+ :-      -----:MMMd--------------:    or enter Q at any prompt to quit the script.
+ :-     ------/MMMd-------------;     
+ :-    ..----/hMMMy------------:      This script is optimised and tested on
+ :-- :dMNdhhdNMMNo------------;       Fedora 20.
+ :---:sdNMMMMNds:------------:        
+ :------:://:-------------::          Earlier or later Fedora releases may be
+ :---------------------://            compatible, but have not been tested.
 "
 
 echo $0 $v #echo current file name and version to terminal
