@@ -14,19 +14,25 @@ R=$(tput sgr0)
 
 clear
 
-echo "${B}  ###${R}                                 ${B}###${R}"
-echo "${B} ### ${T}  ___         _                  ${B} ###${R}"
-echo "${B}###  ${T} /  _| ___  _| | ___  _ __ __ _  ${B}  ###${R}"
-echo "${B}###  ${T} | |_ / _ \/ ' |/   \| '__/ _' | ${B}  ###${R}"
-echo "${B}###  ${T} |  _|  __/ (_)| (_) | | | (_| | ${B}  ###${R}"
-echo "${B}###  ${T} |_|  \___|\_,_|\___/|_|  \__,_| ${B}  ###${R}"
-echo "${B}###  ${R}                                 ${B}  ###${R}"
-echo "${B} ### ${W}       PostInstall Script        ${B} ###${R}"
-echo "${B}  ###${R}                                 ${B}###${R}"
-echo " "
-echo "       Please run this script as root."
-echo "      Enter 'q' at any question to quit"
-
+/bin/cat <<'FedoraLogo'
+           /:-------------:\          
+        :-------------------::        
+      :-----------/shhOHbmp---:\      
+    /-----------omMMMNNNMMD  ---:     
+   :-----------sMMMMNMNMP     ---:    Welcome to the Fedora PostInstall Script!
+  :-----------:MMMdP-----      ---    
+ ,------------:MMMd------      ---:   
+ :------------:MMMd-----      .---:   
+ :----    oNMMMMMMMMMNho     .----:   
+ :--      +shhhMMMmhhy++   .------    
+ :-      -----:MMMd--------------:    
+ :-     ------/MMMd-------------;     
+ :-    ..----/hMMMy------------:      
+ :-- :dMNdhhdNMMNo------------;       
+ :---:sdNMMMMNds:------------:        Please Run this Script as Root
+ :------:://:-------------::          Enter 'q' At Any Prompt to Quit
+ :---------------------://           
+FedoraLogo
 
 Enable_RPMFusion () {
         while [ $a = 1 ]; do
