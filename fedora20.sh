@@ -37,10 +37,9 @@ clear
  :---:sdNMMMMNds:------------:        
  :------:://:-------------::          Earlier or later Fedora releases may be
  :---------------------://            compatible, but have not been tested.
-
 FedoraLogo
 
-echo $0 $v #echo current file name and version to terminal
+echo "" && echo $0 $v #echo current file name and version to terminal
 
 Enable_RPMFusion () {
         while [ $a = 1 ]; do
