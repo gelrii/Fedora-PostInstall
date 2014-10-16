@@ -18,7 +18,6 @@ Paste the above command into a terminal to execute it. This uses curl, as wget i
 
 
 #Proposed/Planned Changes
-- Move project to GitHub to allow one-line auto-download to work (PasteBin is breaking the script).
 - Add desktop environment specific packages to be *installed* and not just removed.
   - Install 'gnome-tweak-tools' for GNOME.
   - Install 'gnome-disk-utility' for KDE (GUI frontend to gdisks - extremely useful! and does not need to pull in any other GNOME packages to work).
@@ -27,7 +26,6 @@ Paste the above command into a terminal to execute it. This uses curl, as wget i
 - Integrate support for automatically discovering what OS is running and running different scripts accordingly (a meta postinstall script).
 - Integrate Google Chrome installation support for those that need Flash.
 - Integrate automatic downloader for the latest Tor browser bundle. (Pipe the downloads.html page into curl and grep out the current 64-bit .tar.gz link?)
-- Give the script the ability to detect whether or not it is being run as root, and quit if it is not. This is to prevent the script asking for multiple sudo passwords along the way, since almost everything it does (installs, updates, kernel modules etc.) requires root.
 
 
 #Changelog
