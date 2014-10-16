@@ -52,3 +52,5 @@ Paste the above command into a terminal to execute it. This uses curl, as wget i
 - v1.9.0 - Added auto-updating ScreenFetch to end of script.
 - v1.9.1 - Fixed issue with ScreenFetch looping instead of terminating script. Also swapped wget for curl as wget is not part of Fedora by default.
 - v1.9.2 - Added packages to useful package installer that will assist in building the VirtualBox Guest Additions for running Fedora as a VBox guest (gcc, kernel-headers, kernel-devel).
+- v1.10 - Created a skeleton script to load scripts depending on Fedora version. Added check to ensure script is being run as root. Fixed script introductory message.
+- v1.11 - Added check to ensure script is not accidentally run on wrong Fedora version.
