@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fedora 20 PostInstall Script
-version="1.10 (20141016)"
+version="1.2 (20141016)"
 
 # Check if we're running as root
 if (( $EUID != 0 )); then
@@ -13,11 +13,11 @@ fi
 if (( $(rpm -E %fedora) != 20 )); then
   /bin/echo "This script is optimised for Fedora 20.
   
-  It may not run correctly on earlier/later versions of Fedora.
+It may not run correctly on earlier/later versions of Fedora.
   
-  To force the script to run on this system, please remove the
-  \"Fedora Version Check\" section of the script, and attempt
-  to run the script again."
+To force the script to run on this system, please remove the
+\"Fedora Version Check\" section of the script, and attempt
+to run the script again."
   exit 1
 fi
 # Fedora Version Check
