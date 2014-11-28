@@ -33,20 +33,20 @@ R=$(tput sgr0)
 
 clear
 
-echo "           /:-------------:\          #############################################
-        :-------------------::        # Welcome to the Fedora PostInstall Script! #
-      :-----------/shhOHbmp---:\      #############################################
-    /-----------omMMMNNNMMD  ---:     
-   :-----------sMMMMNMNMP     ---:    You are running $0 version $version.
-  :-----------:MMMdP-----      ---    
- ,------------:MMMd------      ---:   You will be asked a series of questions to
- :------------:MMMd-----      .---:   help us configure your system.
- :----    oNMMMMMMMMMNho     .----:   
- :--      +shhhMMMmhhy++   .------    Please answer with Y or N,
- :-      -----:MMMd--------------:    or enter Q at any prompt to quit the script.
- :-     ------/MMMd-------------;     
- :-    ..----/hMMMy------------:      This script is optimised and tested on
- :-- :dMNdhhdNMMNo------------;       Fedora 20.
+echo "           /:-------------:\          #############################################"
+echo "        :-------------------::        # Welcome to the Fedora PostInstall Script! #"
+echo "      :-----------/shhOHbmp---:\      #############################################"
+echo "    /-----------omMMMNNNMMD  ---:     "
+echo "   :-----------sMMMMNMNMP     ---:    You are running script version $version."
+echo "  :-----------:MMMdP-----      ---    "
+echo " ,------------:MMMd------      ---:   You will be asked a series of questions to"
+echo " :------------:MMMd-----      .---:   help us configure your system."
+echo " :----    oNMMMMMMMMMNho     .----:   "
+echo " :--      +shhhMMMmhhy++   .------    Please answer with Y or N,"
+echo " :-      -----:MMMd--------------:    or enter Q at any prompt to quit the script."
+echo " :-     ------/MMMd-------------;     "
+echo " :-    ..----/hMMMy------------:      This script is optimised and tested on"
+echo " :-- :dMNdhhdNMMNo------------;       Fedora 20."
  :---:sdNMMMMNds:------------:        
  :------:://:-------------::          Earlier or later Fedora releases may be
  :---------------------://            compatible, but have not been tested.
