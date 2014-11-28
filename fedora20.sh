@@ -47,10 +47,9 @@ echo " :-      -----:MMMd--------------:    or enter Q at any prompt to quit the
 echo " :-     ------/MMMd-------------;     "
 echo " :-    ..----/hMMMy------------:      This script is optimised and tested on"
 echo " :-- :dMNdhhdNMMNo------------;       Fedora 20."
- :---:sdNMMMMNds:------------:        
- :------:://:-------------::          Earlier or later Fedora releases may be
- :---------------------://            compatible, but have not been tested.
-"
+echo " :---:sdNMMMMNds:------------:        "
+echo " :------:://:-------------::          Earlier or later Fedora releases may be"
+echo " :---------------------://            compatible, but have not been tested."
 
 Enable_RPMFusion () {
         while [ $a = 1 ]; do
