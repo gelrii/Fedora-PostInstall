@@ -2,6 +2,7 @@
 
 # Fedora 21 PostInstall Script
 version="2.0 (20141206)"
+fvsupp="21" #(Fedora release version this script targets)
 
 # Check if we're running as root
 if (( $EUID != 0 )); then
@@ -10,8 +11,8 @@ if (( $EUID != 0 )); then
 fi
 
 # Fedora Version Check
-if (( $(rpm -E %fedora) != 21 )); then
-  /bin/echo "This script is optimised for Fedora 21.
+if (( $(rpm -E %fedora) != $fvsupp )); then
+  /bin/echo "This script is optimised for Fedora $fvsupp.
   
 It may not run correctly on earlier/later versions of Fedora.
   
@@ -46,7 +47,7 @@ echo " :--      +shhhMMMmhhy++   .------    Please answer with Y or N,"
 echo " :-      -----:MMMd--------------:    or enter Q at any prompt to quit the script."
 echo " :-     ------/MMMd-------------;     "
 echo " :-    ..----/hMMMy------------:      This script is optimised and tested on"
-echo " :-- :dMNdhhdNMMNo------------;       Fedora 20."
+echo " :-- :dMNdhhdNMMNo------------;       Fedora $fvsupp."
 echo " :---:sdNMMMMNds:------------:        "
 echo " :------:://:-------------::          Earlier or later Fedora releases may be"
 echo " :---------------------://            compatible, but have not been tested."
