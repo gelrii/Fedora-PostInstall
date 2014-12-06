@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fedora 20 PostInstall Script
-version="1.11 (20141016)"
+version="2 (20141206)"
 
 # Check if we're running as root
 if (( $EUID != 0 )); then
