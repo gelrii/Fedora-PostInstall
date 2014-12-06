@@ -1,7 +1,14 @@
 #!/bin/bash
 
+#
+# NOTE:
+#
+# As of December 09 2014 (Fedora 21 Release Date) this script version will no longer be updated.
+# It should continue to work on Fedora 20, but from this date only Fedora 21 will be officially supported.
+#
+
 # Fedora 20 PostInstall Script
-version="2 (20141206)"
+version="2.0 (20141206)"
 
 # Check if we're running as root
 if (( $EUID != 0 )); then
