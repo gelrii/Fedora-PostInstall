@@ -65,10 +65,10 @@ Enable_RPMFusion () {
                         yum -y localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
                         ;;
                         n) a=2
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -78,7 +78,7 @@ done
 Desktop_Environment () {
         while [ $a = 2 ]; do
                 echo " "
-                echo "What desktop environment are you using?"
+                echo "Select Your Desktop Environment"
                 echo "KDE (k) / GNOME (g) / Other (o)"
                 echo " "
                 read opt
@@ -95,7 +95,7 @@ Desktop_Environment () {
                         a=3
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -104,23 +104,23 @@ done
 
 Remove_KDE_Packages () {
         while [ $k = 1 ]; do
-                echo "You selected KDE as your desktop environment"
-                echo "Remove (mostly) useless KDE packages?"
+                echo "KDE Selected"
+                echo "Remove (Mostly) Useless KDE Packages?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) k=0
-                        echo "Removing packages..."
+                        echo "Removing..."
                         yum remove gwenview dragon amarok
-                        echo "Removed useless KDE packages."
+                        echo "Removed Useless KDE Packages."
                         ;;
                         n) k=0
-                        echo "Keeping all KDE packages."
+                        echo "Keeping All Packages."
                         ;;
                         q) k=0
                         a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
                 esac
@@ -129,52 +129,26 @@ done
 
 Remove_Gnome_Packages () {
         while [ $g = 1 ]; do
-                echo "You selected GNOME as your desktop environment."
-                echo "Remove (mostly) useless GNOME packages?"
+                echo "GNOME Selected"
+                echo "Remove (Mostly) Useless GNOME Packages?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) g=0
-                        echo "Removing packages..."
+                        echo "Removing..."
                         yum remove rhythmbox empathy totem evolution shotwell cheese
-                        echo "Removed useless Gnome packages."
+                        echo "Removed Useless GNOME Packages."
                         ;;
                         n) g=0
-                        echo "Keeping all GNOME packages."
+                        echo "Keeping All Packages."
                         ;;
                         q) g=0
                         a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
                 esac
-done
-}
-
-Update_Java () {
-        while [ $a = 3 ]; do
-                echo " "
-                echo "Remove the OpenJDK 7 Java Runtime Environment and Install the OpenJDK 8 Java Runtime Environment?"
-                echo "     ### Warning! ###"
-                echo "This will also remove LibreOffice as it currently (Aug 2014) depends on Java7."
-                echo "     Y / N"
-                echo " "
-                read opt
-                case $opt in
-                        y) a=4
-                        echo "Updating your OpenJDK Java Runtime Environment."
-                        yum remove java* && yum -y install java-1.8.0-openjdk
-                        echo "Removed OpenJDK 7 JRE and installed OpenJDK 8 JRE."
-                        ;;
-                        n) a=4
-                        echo "Moving on."
-                        ;;
-                        q) a=0
-                        echo "Exiting."
-                        exit
-                        ;;
-        esac
 done
 }
 
@@ -192,10 +166,10 @@ System_Update () {
                         echo "Updated System."
                         ;;
                         n) a=5
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -205,22 +179,22 @@ done
 Install_Packages () {
         while [ $a = 5 ]; do
                 echo " "
-                echo "Install a selection of useful packages?"
-                echo "(Some of the packages are nonfree)"
+                echo "Install Useful Package Selection?"
+                echo "(Some Packages Subject to Non-Free Licenses)"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=6
-                        echo "Installing new packages..."
+                        echo "Installing Packages..."
                         yum install clementine transgui htop nano tuned xchat vlc lm_sensors iotop iftop gcc kernel-headers kernel-devel gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
-                        echo "Installed new packages."
+                        echo "Installed Packages."
                         ;;
                         n) a=6
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -230,21 +204,21 @@ done
 Enable_SSH () {
         while [ $a = 6 ]; do
                 echo " "
-                echo "Enable and start SSH services?"
+                echo "Enable and Start SSH Server?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=7
-                        echo "Enabling SSH services..."
+                        echo "Enabling SSH Server..."
                         systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
-                        echo "Enabled SSH services."
+                        echo "Enabled SSH Server"
                         ;;
                         n) a=7
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -265,10 +239,10 @@ Install_ZoL () {
                         echo "Installed ZFS on Linux."
                         ;;
                         n) a=8
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -278,21 +252,21 @@ done
 Hosts_Block () {
         while [ $a = 8 ]; do
                 echo " "
-                echo "Install custom hosts file to block ads/malicious IPs?"
+                echo "Install Custom Hosts File to Block Ads/Malicious IPs?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=9
-                        echo "Installing custom hosts file to /etc/hosts..."
+                        echo "Installing Custom Hosts File to /etc/hosts..."
                         cd /etc && rm /etc/hosts && sudo curl -C - -O http://someonewhocares.org/hosts/hosts
-                        echo "Installed custom hosts file."
+                        echo "Installed Custom Hosts File."
                         ;;
                         n) a=9
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -302,7 +276,7 @@ done
 Fix_Fonts () {
         while [ $a = 9 ]; do
                 echo " "
-                echo "Install Infinality to improve font rendering?"
+                echo "Install Infinality to Improve Font Render Quality?"
                 echo "     Y / N"
                 echo " "
                 read opt
@@ -312,13 +286,14 @@ Fix_Fonts () {
 # Note to script maintainers: The first command in the below line will need updating when the repo is updated.
 # Check this page every so often to see if there have been updates: http://www.infinality.net/blog/infinality-repository/
                         rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm && yum install freetype-infinality fontconfig-infinality
-                        echo "Installed Infinality. Changes to font rendering may not be visible until a reboot."
+                        echo "Installed Infinality."
+                        echo "Changes to font rendering may not be visible until a reboot."
                         ;;
                         n) a=10
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -339,10 +314,10 @@ Install_ownCloud () {
                         echo "Installed ownCloud."
                         ;;
                         n) a=11
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -364,10 +339,10 @@ Install_POL () {
                         echo "Installed PlayOnLinux."
                         ;;
                         n) a=12
-                        echo "Moving on."
+                        echo "Continuing..."
                         ;;
                         q) a=0
-                        echo "Exiting."
+                        echo "Exiting..."
                         exit
                         ;;
         esac
@@ -377,7 +352,6 @@ done
 until [ $a = 0 ]; do
         Enable_RPMFusion
         Desktop_Environment
-        Update_Java
         System_Update
         Install_Packages
         Enable_SSH
