@@ -1,10 +1,6 @@
 #!/bin/bash
 
-gituser=asdf-git
-
 continue=1
-
-# curl -fsSL https://raw.githubusercontent.com/$gituser/Fedora-PostInstall/master/fedora$(rpm -E %fedora).sh -o /tmp/fedora.sh && sudo sh /tmp/fedora.sh
 
 # Fedora 21 PostInstall Script
 version="2.0 (20141206)"
@@ -26,7 +22,7 @@ fi
 # Fedora Version Check
 
 #dir="$(dirname "$0")"
-dir="$(dirname "$0")/Functions/"
+dir="$(dirname "$0")/Plugins/"
 
 . $dir/Start
 . $dir/Main
