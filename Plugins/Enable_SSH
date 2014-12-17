@@ -1,0 +1,25 @@
+#!/bin/bash
+
+Enable_SSH () {
+echo " "
+echo "Enable and Start SSH Server?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Enabling SSH Server..."
+	systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
+	echo "Enabled SSH Server"
+	Main
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) echo "Exiting..."
+	exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}
