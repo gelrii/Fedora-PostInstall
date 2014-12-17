@@ -1,0 +1,30 @@
+#!/bin/bash
+
+Installer () {
+echo ""
+echo "Please select an option:"
+echo "1)Install a package selection"
+echo "2)Install ZFS on Linux"
+echo "3)Install ownCloud"
+echo "4)Install Play on Linux"
+echo "5)Go Back to Main Script"
+echo ""
+echo -n "> "
+read opt
+case $opt in
+	1) Install_Packages
+	;;
+	2) Install_ZoL
+	;;
+	3) Install_ownCloud
+	;;
+	4) Install_POL
+	;;
+	5) Main
+	;;
+	[Qq]* ) exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}
