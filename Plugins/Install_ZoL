@@ -1,0 +1,25 @@
+#!/bin/bash
+
+Install_ZoL () {
+echo " "
+echo "Install ZFS on Linux?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing ZFS on Linux..."
+	sudo yum localinstall --nogpgcheck http://archive.zfsonlinux.org/fedora/zfs-release$(rpm -E %dist).noarch.rpm && sudo yum install kernel-devel zfs
+	echo "Installed ZFS on Linux."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) echo "Exiting..."
+	exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+Install_Packages () {
+echo " "
+echo "Install Useful Package Selection?"
+echo "(Some Packages Subject to Non-Free Licenses)"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing Packages..."
+	yum install clementine transgui htop nano tuned xchat vlc lm_sensors iotop iftop gcc kernel-headers kernel-devel gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
+	echo "Installed Packages."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) echo "Exiting..."
+	exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

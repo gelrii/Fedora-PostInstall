@@ -1,0 +1,36 @@
+#!/bin/bash
+
+Main () {
+echo ""
+echo "This is the main part of the script."
+echo "Please select an option:"
+echo "1)Enable RPMFusion Repositories"
+echo "2)Remove Packages"
+echo "3)System Update"
+echo "4)Install Items"
+echo "5)Enable SSH"
+echo "6)Block Hosts"
+echo "7)Fix Fonts"
+echo ""
+echo -n "> "
+read opt
+case $opt in
+	1) Enable_RPMFusion
+	;;
+	2) Desktop_Environment
+	;;
+	3) System_Update
+	;;
+	4) Installer
+	;;
+	5) Enable_SSH
+	;;
+	7) Hosts_Block
+	;;
+	8) Fix_Fonts
+	;;
+	[Qq]* ) exit
+	;;
+	[Rr]* ) Main
+	;;
+esac

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+Desktop_Environment () {
+echo " "
+echo "Select Your Desktop Environment"
+echo "[K]DE / [G]NOME / [O]ther"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Kk]* ) Remove_KDE_Packages
+	;;
+	[Gg]* ) Remove_Gnome_Packages
+	;;
+	[Oo0]* ) Main
+	;;
+	[Qq]* ) echo "Exiting..."
+	exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}
