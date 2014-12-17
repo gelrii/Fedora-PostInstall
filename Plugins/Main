@@ -25,9 +25,9 @@ case $opt in
 	;;
 	5) Enable_SSH
 	;;
-	7) Hosts_Block
+	6) Hosts_Block
 	;;
-	8) Fix_Fonts
+	7) Fix_Fonts
 	;;
 	[Qq]* ) exit
 	;;
