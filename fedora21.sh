@@ -153,17 +153,42 @@ done
 }
 
 System_Update () {
-        while [ $a = 4 ]; do
+        while [ $a = 3 ]; do
                 echo " "
                 echo "Update System?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
-                        y) a=5
+                        y) a=4
                         echo "Updating System..."
                         yum -y update
                         echo "Updated System."
+                        ;;
+                        n) a=4
+                        echo "Continuing..."
+                        ;;
+                        q) a=0
+                        echo "Exiting..."
+                        exit
+                        ;;
+        esac
+done
+}
+
+Install_Packages () {
+        while [ $a = 4 ]; do
+                echo " "
+                echo "Install Useful Package Selection?"
+                echo "(Some Packages Subject to Non-Free Licenses)"
+                echo "     Y / N"
+                echo " "
+                read opt
+                case $opt in
+                        y) a=5
+                        echo "Installing Packages..."
+                        yum install clementine transgui htop nano tuned xchat vlc lm_sensors iotop iftop gcc kernel-headers kernel-devel gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
+                        echo "Installed Packages."
                         ;;
                         n) a=5
                         echo "Continuing..."
@@ -176,19 +201,18 @@ System_Update () {
 done
 }
 
-Install_Packages () {
+Enable_SSH () {
         while [ $a = 5 ]; do
                 echo " "
-                echo "Install Useful Package Selection?"
-                echo "(Some Packages Subject to Non-Free Licenses)"
+                echo "Enable and Start SSH Server?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=6
-                        echo "Installing Packages..."
-                        yum install clementine transgui htop nano tuned xchat vlc lm_sensors iotop iftop gcc kernel-headers kernel-devel gnome-disk-utility firefox thunderbird keepass remmina-plugins-rdp ffmpeg mkvtoolnix youtube-dl eog recordmydesktop gpg gimp wget ntp unrar
-                        echo "Installed Packages."
+                        echo "Enabling SSH Server..."
+                        systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
+                        echo "Enabled SSH Server"
                         ;;
                         n) a=6
                         echo "Continuing..."
@@ -201,18 +225,18 @@ Install_Packages () {
 done
 }
 
-Enable_SSH () {
+Install_ZoL () {
         while [ $a = 6 ]; do
                 echo " "
-                echo "Enable and Start SSH Server?"
+                echo "Install ZFS on Linux?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=7
-                        echo "Enabling SSH Server..."
-                        systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
-                        echo "Enabled SSH Server"
+                        echo "Installing ZFS on Linux..."
+                        sudo yum localinstall --nogpgcheck http://archive.zfsonlinux.org/fedora/zfs-release$(rpm -E %dist).noarch.rpm && sudo yum install kernel-devel zfs
+                        echo "Installed ZFS on Linux."
                         ;;
                         n) a=7
                         echo "Continuing..."
@@ -225,18 +249,18 @@ Enable_SSH () {
 done
 }
 
-Install_ZoL () {
+Hosts_Block () {
         while [ $a = 7 ]; do
                 echo " "
-                echo "Install ZFS on Linux?"
+                echo "Install Custom Hosts File to Block Ads/Malicious IPs?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=8
-                        echo "Installing ZFS on Linux..."
-                        sudo yum localinstall --nogpgcheck http://archive.zfsonlinux.org/fedora/zfs-release$(rpm -E %dist).noarch.rpm && sudo yum install kernel-devel zfs
-                        echo "Installed ZFS on Linux."
+                        echo "Installing Custom Hosts File to /etc/hosts..."
+                        cd /etc && rm /etc/hosts && sudo curl -C - -O http://someonewhocares.org/hosts/hosts
+                        echo "Installed Custom Hosts File."
                         ;;
                         n) a=8
                         echo "Continuing..."
@@ -249,18 +273,21 @@ Install_ZoL () {
 done
 }
 
-Hosts_Block () {
+Fix_Fonts () {
         while [ $a = 8 ]; do
                 echo " "
-                echo "Install Custom Hosts File to Block Ads/Malicious IPs?"
+                echo "Install Infinality to Improve Font Render Quality?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=9
-                        echo "Installing Custom Hosts File to /etc/hosts..."
-                        cd /etc && rm /etc/hosts && sudo curl -C - -O http://someonewhocares.org/hosts/hosts
-                        echo "Installed Custom Hosts File."
+                        echo "Installing Infinality..."
+# Note to script maintainers: The first command in the below line will need updating when the repo is updated.
+# Check this page every so often to see if there have been updates: http://www.infinality.net/blog/infinality-repository/
+                        rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm && yum install freetype-infinality fontconfig-infinality
+                        echo "Installed Infinality."
+                        echo "Changes to font rendering may not be visible until a reboot."
                         ;;
                         n) a=9
                         echo "Continuing..."
@@ -273,21 +300,18 @@ Hosts_Block () {
 done
 }
 
-Fix_Fonts () {
+Install_ownCloud () {
         while [ $a = 9 ]; do
                 echo " "
-                echo "Install Infinality to Improve Font Render Quality?"
+                echo "Install ownCloud Desktop Sync Client?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
                         y) a=10
-                        echo "Installing Infinality..."
-# Note to script maintainers: The first command in the below line will need updating when the repo is updated.
-# Check this page every so often to see if there have been updates: http://www.infinality.net/blog/infinality-repository/
-                        rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm && yum install freetype-infinality fontconfig-infinality
-                        echo "Installed Infinality."
-                        echo "Changes to font rendering may not be visible until a reboot."
+                        echo "Installing ownCloud..."
+                        cd /etc/yum.repos.d/ && wget http://download.opensuse.org/repositories/isv:ownCloud:desktop/Fedora_20/isv:ownCloud:desktop.repo && yum install owncloud-client
+                        echo "Installed ownCloud."
                         ;;
                         n) a=10
                         echo "Continuing..."
@@ -300,45 +324,21 @@ Fix_Fonts () {
 done
 }
 
-Install_ownCloud () {
-        while [ $a = 10 ]; do
-                echo " "
-                echo "Install ownCloud Desktop Sync Client?"
-                echo "     Y / N"
-                echo " "
-                read opt
-                case $opt in
-                        y) a=11
-                        echo "Installing ownCloud..."
-                        cd /etc/yum.repos.d/ && wget http://download.opensuse.org/repositories/isv:ownCloud:desktop/Fedora_20/isv:ownCloud:desktop.repo && yum install owncloud-client
-                        echo "Installed ownCloud."
-                        ;;
-                        n) a=11
-                        echo "Continuing..."
-                        ;;
-                        q) a=0
-                        echo "Exiting..."
-                        exit
-                        ;;
-        esac
-done
-}
-
 Install_POL () {
-        while [ $a = 11 ]; do
+        while [ $a = 10 ]; do
                 echo " "
                 echo "Install PlayOnLinux?"
                 echo "     Y / N"
                 echo " "
                 read opt
                 case $opt in
-                        y) a=12
+                        y) a=11
                         echo "Installing PlayOnLinux..."
 # Note to script maintainers: The first command in the below line will need updating when the repo is updated.
                         wget -O /tmp/playonlinux.rpm http://rpm.playonlinux.com/playonlinux-yum-4-1.noarch.rpm && yum -y install /tmp/playonlinux.rpm && yum install playonlinux
                         echo "Installed PlayOnLinux."
                         ;;
-                        n) a=12
+                        n) a=11
                         echo "Continuing..."
                         ;;
                         q) a=0
