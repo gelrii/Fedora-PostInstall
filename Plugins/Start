@@ -1,0 +1,34 @@
+#!/bin/bash
+
+Start () {
+clear
+echo "           /:-------------:\            #############################################"
+echo "        :-------------------::          # Welcome to the Fedora PostInstall Script! #"
+echo "      :-----------/shhOHbmp---:\        #############################################"
+echo "    /-----------omMMMNNNMMD  ---:                                                    "
+echo "   :-----------sMMMMNMNMP      ---:     You are running script version $version.     "
+echo "  :-----------:MMMdP-----       ---                                                  "
+echo " ,------------:MMMd------       ---:    You will be asked a series of questions to   "
+echo " :------------:MMMd-----       .---:    help us configure your system.               "
+echo " :----  oNMMMMMMMMMNho        .----:                                                 "
+echo " :--      +shhhMMMmhhy++    .------     Please answer with Y or N, R will return to  "
+echo " :-      -----:MMMd--------------:      the main page and Q will prompt the script to"
+echo " :-     ------/MMMd-------------;       exit.                                        "
+echo " :-    ..----/hMMMy------------:                                                     "
+echo " :-- :dMNdhhdNMMNo------------;         This script is optimised and tested on       "
+echo " :---:sdNMMMMNds:------------:          Fedora $fvsupp.                              "
+echo " :------:://:-------------::                                                         "
+echo " :---------------------://              Earlier or later Fedora releases may be      "
+echo "                                        compatible, but have not been tested.        "
+echo "              #####  Please press enter to continue.  #####"
+echo -n "> "
+read opt
+case $opt in
+	[Qq]* ) exit
+	;;
+	[Rr]* ) Main
+	;;
+	*) Main
+	;;
+esac
+}
