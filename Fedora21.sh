@@ -3,7 +3,7 @@
 continue=1
 
 # Fedora 21 PostInstall Script
-version="2.0 (20141206)"
+version="3.0 (20141218)"
 fvsupp="21" #(Fedora release version this script targets)
 
 # Check if we're running as root
