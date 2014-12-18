@@ -5,6 +5,7 @@
 gituser=asdf-git
 
 sudo yum install git -y
+rm -rf /tmp/Fedora-PostInstall
 cd /tmp
 git clone -q https://github.com/$gituser/Fedora-PostInstall.git
 sudo sh /tmp/Fedora-PostInstall/Fedora$(rpm -E %fedora).sh
