@@ -1,0 +1,40 @@
+#!/bin/bash
+
+Exit () {
+echo ""
+echo "Are you sure you wish to exit?"
+echo " [Y]es / [N]o"
+echo ""
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) clear
+	clear
+	echo "           /:-------------:\             "
+	echo "        :-------------------::           "
+	echo "      :-----------/shhOHbmp---:\         "
+	echo "    /-----------omMMMNNNMMD  ---:        "
+	echo "   :-----------sMMMMNMNMP      ---:      "
+	echo "  :-----------:MMMdP-----       ---      "
+	echo " ,------------:MMMd------       ---:     "
+	echo " :------------:MMMd-----       .---:     "
+	echo " :----  oNMMMMMMMMMNho        .----:     "
+	echo " :--      +shhhMMMmhhy++    .------      "
+	echo " :-      -----:MMMd--------------:       "
+	echo " :-     ------/MMMd-------------;        "
+	echo " :-    ..----/hMMMy------------:         "
+	echo " :-- :dMNdhhdNMMNo------------;          "
+	echo " :---:sdNMMMMNds:------------:   Success!"
+	echo " :------:://:-------------::             "
+	echo " :---------------------://               "
+	echo ""
+	exit
+	;;
+	[Nn]* ) Main
+	;;
+	[Qq]* ) exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}
