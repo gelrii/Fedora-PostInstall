@@ -30,6 +30,7 @@ dir="$(dirname "$0")/Plugins"
 #Specify plugins here
 . $dir/Start
 . $dir/Main
+. $dir/Exit
 . $dir/Enable_RPMFusion
 . $dir/Desktop_Environment
 . $dir/Remove_KDE_Packages
