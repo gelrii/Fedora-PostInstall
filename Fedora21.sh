@@ -23,8 +23,9 @@ exit 1
 fi
 # Fedora Version Check
 
-#dir="$(dirname "$0")"
-dir="$(dirname "$0")/Plugins/"
+#Tell the script to look in the current directory,
+#also appending the name of the plugins directory
+dir="$(dirname "$0")/Plugins"
 
 . $dir/Start
 . $dir/Main
