@@ -5,11 +5,13 @@ continue=1
 # Fedora 21 PostInstall Script
 version="2.0 (20141206)"
 fvsupp="21" #(Fedora release version this script targets)
+
 # Check if we're running as root
 if (( $EUID != 0 )); then
 /bin/echo "This script must be run as root. Type in 'sudo $0' to run it as root."
 exit 1
 fi
+
 # Fedora Version Check
 if (( $(rpm -E %fedora) != $fvsupp )); then
 /bin/echo "This script is optimised for Fedora $fvsupp.
