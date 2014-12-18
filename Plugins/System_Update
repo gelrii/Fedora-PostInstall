@@ -9,7 +9,7 @@ echo -n "> "
 read opt
 case $opt in
 	[Yy]* ) echo "Updating System..."
-	yum -y update
+	yum update
 	echo "Updated System."
 	Main
 	;;
