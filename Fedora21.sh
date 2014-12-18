@@ -23,13 +23,13 @@ exit 1
 fi
 # Fedora Version Check
 
-#Tell the script to look in the current directory,
-#also appending the name of the plugins directory
+#Tell the script to look in the current directory
+#and append the name of the plugins directory
 dir="$(dirname "$0")/Plugins"
 
+#Specify plugins here
 . $dir/Start
 . $dir/Main
-#. $dir/Exit
 . $dir/Enable_RPMFusion
 . $dir/Desktop_Environment
 . $dir/Remove_KDE_Packages
@@ -43,7 +43,6 @@ dir="$(dirname "$0")/Plugins"
 . $dir/Fix_Fonts
 . $dir/Install_ownCloud
 . $dir/Install_POL
-#. $dir/
 
 until [ $continue = 0 ]; do
 	Start
