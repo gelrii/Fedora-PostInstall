@@ -38,6 +38,7 @@ dir="$(dirname "$0")/Plugins"
 . $dir/System_Update
 . $dir/Installer
 . $dir/Install_Packages
+. $dir/Install_NVIDIA
 . $dir/Enable_SSH
 . $dir/Install_ZoL
 . $dir/Hosts_Block
