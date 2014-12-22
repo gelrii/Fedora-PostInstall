@@ -4,23 +4,26 @@ Installer () {
 echo ""
 echo "Please select an option:"
 echo "1)Install a package selection"
-echo "2)Install ZFS on Linux"
-echo "3)Install ownCloud"
-echo "4)Install Play on Linux"
-echo "5)Go Back to Main Script"
+echo "2)Install Proprietary NVIDIA GPU Drivers"
+echo "3)Install ZFS on Linux"
+echo "4)Install ownCloud"
+echo "5)Install Play on Linux"
+echo "6)Go Back to Main Script"
 echo ""
 echo -n "> "
 read opt
 case $opt in
 	1) Install_Packages
 	;;
-	2) Install_ZoL
+	2) Install_NVIDIA
 	;;
-	3) Install_ownCloud
+	3) Install_ZoL
 	;;
-	4) Install_POL
+	4) Install_ownCloud
 	;;
-	5) Main
+	5) Install_POL
+	;;
+	6) Main
 	;;
 	[Qq]* ) exit
 	;;
