@@ -4,9 +4,9 @@ Main () {
 echo ""
 echo "This is the main part of the script."
 echo "Please select an option:"
-echo "1)Enable RPMFusion Repositories"
+echo "1)System Update"
 echo "2)Remove Packages"
-echo "3)System Update"
+echo "3)Enable RPMFusion Repositories"
 echo "4)Install Items"
 echo "5)Enable SSH"
 echo "6)Block Hosts"
@@ -16,11 +16,11 @@ echo ""
 echo -n "> "
 read opt
 case $opt in
-	1) Enable_RPMFusion
+	1) System_Update
 	;;
 	2) Desktop_Environment
 	;;
-	3) System_Update
+	3) Enable_RPMFusion
 	;;
 	4) Installer
 	;;
