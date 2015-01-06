@@ -45,6 +45,7 @@ dir="$(dirname "$0")/Plugins"
 . $dir/Fix_Fonts
 . $dir/Install_ownCloud
 . $dir/Install_POL
+. $dir/Install_Chrome
 
 until [ $continue = 0 ]; do
 	Start
