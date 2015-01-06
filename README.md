@@ -11,8 +11,7 @@ Paste the above command into a terminal to execute it. This uses curl, as wget i
 
 #Proposed/Planned Changes
 - Add desktop *environment specific* packages to be *installed* and not just removed.
-  - Install 'gnome-tweak-tools' for GNOME. Also ask whether to install Dolphin in GNOME.
-  - Install 'gnome-disk-utility' for KDE (GUI frontend to gdisks - extremely useful! and does not need to pull in any other GNOME packages to work).
+  - Install 'gnome-tweak-tools' when GNOME is the active DE. Also ask whether to install Dolphin and Konsole in GNOME.
 
 - Integrate a reboot after the initial system update and resume the script after rebooting?
   - (Would allow the VirtualBox section to be re-added and an NVidia drivers section to be added.)
