@@ -25,7 +25,7 @@ fi
 
 #Tell the script to look in the current directory
 #and append the name of the plugins directory
-dir="$(dirname "$0")/Plugins"
+dir="$(dirname "$0")/Plugins$fvsupp"
 
 #Specify plugins here
 . $dir/Start
