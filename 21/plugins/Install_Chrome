@@ -9,7 +9,7 @@ echo -n "> "
 read opt
 case $opt in
 	[Yy]* ) echo "Installing Google Chrome..."
-	sudo curl -o /etc/yum.repos.d/google-chrome.repo https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/Repos/google-chrome.repo && sudo yum install google-chrome-stable
+	sudo curl -o /etc/yum.repos.d/google-chrome.repo https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/$(rpm -E %fedora)/assets/google-chrome.repo && sudo yum install google-chrome-stable
 	echo "Installed Google Chrome."
 	Installer
 	;;
