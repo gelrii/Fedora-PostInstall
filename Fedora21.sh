@@ -25,8 +25,8 @@ fi
 
 #Tell the script to look in the current directory
 #and append the name of the plugins directory
-dir="$(dirname "$0")/Plugins"
-# dir="$(dirname "$0")/f$fvsupp/plugins" #Future plan is to make it look in a directory specific to the Fedora version for each set of plugins. Will do the same for custom repositories.
+#dir="$(dirname "$0")/Plugins"
+dir="$(dirname "$0")/f$fvsupp/plugins"
 
 #Specify plugins here
 . $dir/Start
