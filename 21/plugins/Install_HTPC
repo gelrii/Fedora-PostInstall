@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Install HTPC () {
+Install_HTPC () {
 echo "Complete Steps Necessary to Install Fedora HTPC?"
 echo " [Y]es / [N]o"
 echo " "
