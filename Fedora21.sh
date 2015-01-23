@@ -47,6 +47,7 @@ dir="$(dirname "$0")/$fvsupp/plugins"
 . $dir/Install_ownCloud
 . $dir/Install_POL
 . $dir/Install_Chrome
+. $dir/Install_HTPC
 
 until [ $continue = 0 ]; do
 	Start
