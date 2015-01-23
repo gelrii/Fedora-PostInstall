@@ -10,7 +10,8 @@ echo "3)Enable RPMFusion Repositories"
 echo "4)Install Items"
 echo "5)Enable SSH"
 echo "6)Block Hosts"
-echo "7)Exit"
+echo "7)Install as HTPC"
+echo "8)Exit"
 #echo "7)Fix Fonts" #Deprecated until Infinality repo available for Fedora 21
 echo ""
 echo -n "> "
@@ -28,8 +29,10 @@ case $opt in
 	;;
 	6) Hosts_Block
 	;;
-	7) Exit
+	7) Install_HTPC
 	;;
+	8) Exit
+	;;	
 #	7) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
 #	;; #Deprecated until Infinality repo available for Fedora 21
 	[Qq]* ) exit
