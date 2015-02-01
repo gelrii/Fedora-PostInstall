@@ -17,7 +17,7 @@ case $opt in
 	echo "Enabling SSH Access..."
 	  systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
 	echo "Removing Useless Packages..."
-	  yum remove transmission* java*  libreoffice* devassistant gnome-boxes gnome-documents gnome-weather gnome-contacts gnome-maps rhythmbox empathy totem evolution shotwell cheese gwenview dragon amarok
+	  yum remove transmission* java* libreoffice* devassistant gnome-boxes gnome-documents gnome-weather gnome-contacts gnome-maps rhythmbox empathy totem evolution shotwell cheese gwenview dragon amarok
 	echo "Cleaning Up..."
 	  yum autoremove
 	echo "Process Complete... Please Reboot System."
