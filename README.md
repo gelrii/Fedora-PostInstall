@@ -3,6 +3,8 @@ Fedora-PostInstall
 
 A useful script to facilitate speedy deployment of Fedora desktop and laptop environments.
 
+This script is particularly tailored for my own usage (particularly the parts that remove packages I don't find useful and install packages I do), but anyone is free to use/modify/fork it if you feel it would be useful to you.
+
 You can run this script quickly with the following command:
 <pre>curl -fsSL https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/Fedora.sh -o /tmp/Fedora.sh && sudo sh /tmp/Fedora.sh</pre>
 
