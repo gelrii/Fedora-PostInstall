@@ -2,32 +2,31 @@
 
 Installer () {
 echo ""
-echo "Please select an option:"
-echo "1)Install a useful package selection"
-echo "2)Install NVIDIA GPU Drivers [Non-Free]"
-echo "3)Install ZFS on Linux"
-echo "4)Install ownCloud"
-echo "5)Install Play on Linux [Non-Free]"
-echo "6)Install Google Chrome [Non-Free]"
-echo "7)Return to Main Script"
+echo "Select an Option:"
+echo "[i] Install a useful package selection"
+echo "[n] Install NVIDIA GPU Drivers [Non-Free]"
+echo "[z] Install ZFS on Linux"
+echo "[o] Install ownCloud"
+echo "[p] Install Play on Linux [Non-Free]"
+echo "[c] Install Google Chrome [Non-Free]"
+echo ""
+echo "[r] Return to Main Script"
 echo ""
 echo -n "> "
 read opt
 case $opt in
-	1) Install_Packages
+	[Ii]* ) Install_Packages
 	;;
-	2) Install_NVIDIA
+	[Nn]* ) Install_NVIDIA
 	;;
-	3) Install_ZoL
+	[Zz]* ) Install_ZoL
 	;;
-	4) Install_ownCloud
+	[Oo]* ) Install_ownCloud
 	;;
-	5) Install_POL
+	[Pp]* ) Install_POL
 	;;
-	6) Install Google Chrome
+	[Cc]* ) Install Google Chrome
 	;;
-	7) Main
-	;;	
 	[Qq]* ) exit
 	;;
 	[Rr]* ) Main
