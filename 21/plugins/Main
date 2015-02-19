@@ -2,41 +2,39 @@
 
 Main () {
 echo ""
-echo "This is the main part of the script."
-echo "Please select an option:"
-echo "1)System Update"
-echo "2)Remove Packages"
-echo "3)Enable RPMFusion Repositories"
-echo "4)Install Items"
-echo "5)Enable SSH"
-echo "6)Block Hosts"
-echo "7)Install as HTPC"
-echo "8)Install Dotfiles"
-echo "9)Exit"
+echo "Select an Option:"
+echo "[u] System Update"
+echo "[p] Remove Packages"
+echo "[r] Enable RPMFusion Repositories"
+echo "[i] Install Items"
+echo "[s] Enable SSH"
+echo "[b] Block Ads etc. with Custom Hosts File"
+echo "[h] Install as HTPC"
+echo "[d] Install Dotfiles"
+echo ""
+echo "[q] Exit"
 #echo "7)Fix Fonts" #Deprecated until Infinality repo available for Fedora 21
 echo ""
 echo -n "> "
 read opt
 case $opt in
-	1) System_Update
+	[Uu]* ) System_Update
 	;;
-	2) Desktop_Environment
+	[Pp]* ) Desktop_Environment
 	;;
-	3) Enable_RPMFusion
+	[Rr]* ) Enable_RPMFusion
 	;;
-	4) Installer
+	[Ii]* ) Installer
 	;;
-	5) Enable_SSH
+	[Ss]* ) Enable_SSH
 	;;
-	6) Hosts_Block
+	[Bb]* ) Hosts_Block
 	;;
-	7) Install_HTPC
+	[Hh]* ) Install_HTPC
 	;;
-	8) Dotfiles
+	[Dd]* ) Dotfiles
 	;;
-	9) Exit
-	;;
-#	7) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
+#	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
 #	;; #Deprecated until Infinality repo available for Fedora 21
 	[Qq]* ) exit
 	;;
