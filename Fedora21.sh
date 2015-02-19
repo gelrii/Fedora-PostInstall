@@ -48,6 +48,7 @@ dir="$(dirname "$0")/$fvsupp/plugins"
 . $dir/Install_POL
 . $dir/Install_Chrome
 . $dir/Install_HTPC
+. $dir/Dotfiles
 
 until [ $continue = 0 ]; do
 	Start
