@@ -10,9 +10,9 @@ read opt
 case $opt in
 	[Yy]* ) echo "Installing Dotfile Dependancies..."
 	sudo yum install -y wget lm_sensors phoronix-test-suite unrar recordmydesktop
-	echo "Installing 
+	echo "Installing..."
 	curl -o /home/`whoami`/.bashrc https://raw.githubusercontent.com/asdf-git/dotfiles/master/.bashrc && curl -o /home/`whoami`/.bash_aliases https://raw.githubusercontent.com/asdf-git/dotfiles/master/.bash_aliases && curl -o /home/`whoami`/.systeminfo.sh https://raw.githubusercontent.com/asdf-git/dotfiles/master/.systeminfo.sh && curl -o /home/`whoami`/.update.sh https://raw.githubusercontent.com/asdf-git/dotfiles/master/.update.sh
-  echo "Installed Dotfiles"
+  	echo "Installed Dotfiles"
 	Main
 	;;
 	[Nn]* ) echo "Continuing..."
