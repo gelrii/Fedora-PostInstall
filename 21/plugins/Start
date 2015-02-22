@@ -18,8 +18,8 @@ echo " :-    ..----/hMMMy------------:                                          
 echo " :-- :dMNdhhdNMMNo------------;         This script is optimised and tested on       "
 echo " :---:sdNMMMMNds:------------:          Fedora $fvsupp.                              "
 echo " :------:://:-------------::                                                         "
-echo " :---------------------://              Earlier or later Fedora releases may be      "
-echo "                                        compatible, but have not been tested.        "
+echo " :---------------------://              You are running this script as               "
+echo "                                        user: $luser.                                "
 echo "              #####  Please press enter to continue.  #####"
 echo -n "> "
 read opt
