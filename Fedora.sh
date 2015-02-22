@@ -3,7 +3,7 @@
 #Configure the GitHub user that the plugin scripts will be pulled from.
 #This is useful if you have forked the script and intend to customise your own plugins.
 gituser=asdf-git
-luser=`whoami` #Set the identity of the user who launched the script. Will be useful later.
+luser=$(whoami) #Set the identity of the user who launched the script. Will be useful later.
 
 rm -rf /tmp/Fedora-PostInstall
 cd /tmp
