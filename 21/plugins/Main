@@ -11,7 +11,7 @@ echo "[s] Enable SSH"
 echo "[b] Block Ads etc. with Custom Hosts File"
 echo "[h] Install as HTPC"
 echo "[d] Install Dotfiles"
-echo "[m] Complete Minimal Install"
+echo "[m] Complete Minimal Setup"
 echo ""
 echo "[q] Exit"
 #echo "7)Fix Fonts" #Deprecated until Infinality repo available for Fedora 21
@@ -35,7 +35,7 @@ case $opt in
 	;;
 	[Dd]* ) Dotfiles
 	;;
-	[Mm]* ) Minimal_Install
+	[Mm]* ) Minimal_Setup
 	;;
 #	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
 #	;; #Deprecated until Infinality repo available for Fedora 21
