@@ -50,6 +50,7 @@ dir="$(dirname "$0")/$fvsupp/plugins"
 . $dir/Install_HTPC
 . $dir/Dotfiles
 . $dir/Minimal_Setup
+. $dir/VM_Guest
 
 until [ $continue = 0 ]; do
 	Start
