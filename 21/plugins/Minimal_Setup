@@ -2,6 +2,14 @@
 
 Minimal_Setup () {
 echo "Complete Minimal Useful Install Procedure?"
+echo ""
+echo "This will install a minimal set of useful packages,"
+echo "currently: \"htop, glances, wget, nano\"."
+echo ""
+echo "It will then enable SSH access, and remove most of"
+echo "the default GNOME packages to slim down the install as"
+echo "much as possible."
+echo ""
 echo " [Y]es / [N]o"
 echo " "
 echo -n "> "
