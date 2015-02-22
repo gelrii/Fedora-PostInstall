@@ -6,6 +6,6 @@ gituser=asdf-git
 
 rm -rf /tmp/Fedora-PostInstall
 cd /tmp
-echo `whoami` > /tmp/Fedora-PostInstall/user
 git clone -q https://github.com/$gituser/Fedora-PostInstall.git
+echo `whoami` > /tmp/Fedora-PostInstall/user
 sudo sh /tmp/Fedora-PostInstall/Fedora$(rpm -E %fedora).sh
