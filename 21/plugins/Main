@@ -41,7 +41,7 @@ case $opt in
 	;;
 	[Vv]* ) VM_Guest
 	;;
-	[Aa]* ) VM_Guest
+	[Aa]* ) AutoUpdate
 	;;
 #	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
 #	;; #Deprecated until Infinality repo available for Fedora 21
