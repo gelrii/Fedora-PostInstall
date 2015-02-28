@@ -1,13 +1,12 @@
 #!/bin/bash
-
 continue=1
 
-# Fedora 21 PostInstall Script
+# Set some variables
 version="4.1" # Increment major changes here, and update datecode when necessary
 fvsupp="21" # Fedora release version this script targets
 luser=$(< /tmp/Fedora-PostInstall/user) #Set the identity of the user who launched the script. Will be useful later.
 
-# Check if we're running as root
+# Ensure script is being run as root
 if (( $EUID != 0 )); then
 /bin/echo "This script must be run as root. Type in 'sudo $0' to run it as root."
 exit 1
@@ -22,7 +21,6 @@ To force the script to run on this system, please remove the
 to run the script again."
 exit 1
 fi
-# Fedora Version Check
 
 #Tell the script to look in the current directory
 #and append the name of the plugins directory
