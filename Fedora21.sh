@@ -52,6 +52,7 @@ dir="$(dirname "$0")/$fvsupp/plugins"
 . $dir/Dotfiles
 . $dir/Minimal_Setup
 . $dir/VM_Guest
+. $dir/AutoUpdate
 
 until [ $continue = 0 ]; do
 	Start
