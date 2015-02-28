@@ -3,7 +3,7 @@
 continue=1
 
 # Fedora 21 PostInstall Script
-version="3.1 (20150116)" # Increment major changes here, and update datecode when necessary
+version="4.1" # Increment major changes here, and update datecode when necessary
 fvsupp="21" # Fedora release version this script targets
 luser=$(< /tmp/Fedora-PostInstall/user) #Set the identity of the user who launched the script. Will be useful later.
 
