@@ -17,7 +17,7 @@ echo -n "> "
 read opt
 case $opt in
 [Yy]* ) echo "Installing Proprietary NVIDIA Drivers..."
-yum install akmod-nvidia xorg-x11-drv-nvidia-libs kernel-devel acpid vdpauinfo libva-vdpau-driver libva-utils && echo "Generating New initramfs..." && mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img && dracut /boot/initramfs-$(uname -r).img $(uname -r)
+yum install akmod-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 kernel-devel acpid vdpauinfo libva-vdpau-driver libva-utils && echo "Generating New initramfs..." && mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img && dracut /boot/initramfs-$(uname -r).img $(uname -r)
 echo "NVIDIA Drivers Installed."
 Installer
 ;;
