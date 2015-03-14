@@ -1,0 +1,28 @@
+#!/bin/bash
+VM_Guest () {
+echo " "
+echo "Install VirtualBox Guest Additions?"
+echo ""
+echo "Please enable the RPMFusion repositories"
+echo "before using this option."
+echo ""
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+[Yy]* ) echo "Installing VMware Guest Additions..."
+yum install VirtualBox-guest
+echo "Installed VirtualBox Guest Additions"
+Main
+;;
+[Nn]* ) echo "Continuing..."
+Main
+;;
+[Qq]* ) echo "Exiting..."
+exit
+;;
+[Rr]* ) Main
+;;
+esac
+}
