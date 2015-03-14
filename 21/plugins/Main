@@ -13,6 +13,7 @@ echo "[h] Install as HTPC"
 echo "[d] Install Dotfiles"
 echo "[m] Complete Minimal Setup"
 echo "[v] Install VMware Guest Additions"
+echo "[x] Install VirtualBox Guest Additions"
 echo "[a] Enable Automatic Updates"
 echo ""
 echo "[q] Exit"
@@ -41,6 +42,8 @@ case $opt in
 	;;
 	[Vv]* ) VM_Guest
 	;;
+	[Xx]* ) VBox_Guest
+	;;	
 	[Aa]* ) AutoUpdate
 	;;
 #	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
