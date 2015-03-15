@@ -13,7 +13,7 @@ echo -n "> "
 read opt
 case $opt in
 	[Yy]* ) echo "Installing VMware Guest Additions..."
-	  yum install open-vm-tools open-vm-tools-desktop
+	yum install open-vm-tools open-vm-tools-desktop
 	echo "Installed VMware Guest Additions"
 	Main
 	;;
