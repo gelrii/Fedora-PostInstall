@@ -20,15 +20,15 @@ read opt
 case $opt in
 	[Yy]* ) echo "Working..."
 	echo "Updating System..."
-	  yum update
+	  yum update -y
 	echo "Installing Useful HTPC Packages..."
-	  yum install htop glances wget nano yum-cron
+	  yum install -y htop glances wget nano yum-cron
 	echo "Enabling SSH Access..."
 	  systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
 	echo "Removing Useless Packages..."
-	  yum remove transmission* java* libreoffice* devassistant gnome-boxes gnome-documents gnome-weather gnome-contacts gnome-maps rhythmbox empathy totem evolution shotwell cheese gwenview dragon amarok
+	  yum remove -y transmission* java* libreoffice* devassistant gnome-boxes gnome-documents gnome-weather gnome-contacts gnome-maps rhythmbox empathy totem evolution shotwell cheese gwenview dragon amarok
 	echo "Cleaning Up..."
-	  yum autoremove
+	  yum autoremove -y
 	echo "Process Complete... Please Reboot System."
 	Main
 	;;
