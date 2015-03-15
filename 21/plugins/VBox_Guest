@@ -1,5 +1,6 @@
 #!/bin/bash
-VM_Guest () {
+
+VBox_Guest () {
 echo " "
 echo "Install VirtualBox Guest Additions?"
 echo ""
@@ -11,18 +12,18 @@ echo " "
 echo -n "> "
 read opt
 case $opt in
-[Yy]* ) echo "Installing VMware Guest Additions..."
-yum install VirtualBox-guest
-echo "Installed VirtualBox Guest Additions"
-Main
-;;
-[Nn]* ) echo "Continuing..."
-Main
-;;
-[Qq]* ) echo "Exiting..."
-exit
-;;
-[Rr]* ) Main
-;;
+  [Yy]* ) echo "Installing VMware Guest Additions..."
+  yum install VirtualBox-guest
+  echo "Installed VirtualBox Guest Additions"
+  Main
+  ;;
+  [Nn]* ) echo "Continuing..."
+  Main
+  ;;
+  [Qq]* ) echo "Exiting..."
+  exit
+  ;;
+  [Rr]* ) Main
+  ;;
 esac
 }
