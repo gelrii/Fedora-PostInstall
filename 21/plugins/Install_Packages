@@ -31,7 +31,8 @@ case $opt in
 		thunderbird \
 		keepass \
 		remmina-plugins-rdp \
-		ffmpeg mkvtoolnix \
+		ffmpeg \
+		mkvtoolnix \
 		youtube-dl \
 		eog \
 		recordmydesktop \
