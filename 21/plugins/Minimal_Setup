@@ -22,11 +22,36 @@ case $opt in
 	echo "Updating System..."
 	  yum update -y
 	echo "Installing Useful HTPC Packages..."
-	  yum install -y htop glances wget nano yum-cron
+	  yum install -y \
+	  	glances \
+	  	htop \
+	  	nano \
+	  	wget \
+	  	yum-cron
 	echo "Enabling SSH Access..."
 	  systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
 	echo "Removing Useless Packages..."
-	  yum remove -y transmission* java* libreoffice* devassistant gnome-boxes gnome-documents gnome-weather gnome-contacts gnome-maps gnome-software rhythmbox empathy totem evolution shotwell cheese gwenview dragon amarok
+	  yum remove -y \
+	  	amarok \
+	  	cheese \
+	  	devassistant \
+	  	dragon \
+	  	empathy \
+	  	evolution \
+	  	gnome-boxes \
+	  	gnome-contacts \
+	  	gnome-documents \
+	  	gnome-maps \
+	  	gnome-software \
+	  	gnome-weather \
+	  	gwenview \
+	  	java* \
+	  	k3b \
+	  	libreoffice* \
+	  	rhythmbox \
+	  	shotwell \
+	  	totem \
+	  	transmission*
 	echo "Cleaning Up..."
 	  yum autoremove -y
 	echo "Process Complete... Please Reboot System."
