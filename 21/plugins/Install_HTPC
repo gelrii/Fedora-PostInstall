@@ -9,15 +9,17 @@ read opt
 case $opt in
 	[Yy]* ) echo "Working..."
 	echo "Enabling RPMFusion Repositories..."
-	  su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+		su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+	echo "Installing Kodi..."
+		yum -y install kodi
 	echo "Kodi installed... Beginning Minimal Setup..."
-	  Minimal_Setup
+		Minimal_Setup
 	;;
 	[Nn]* ) echo "Exiting...."
-	Main
+		Main
 	;;
 	[Qq]* ) echo "Exiting..."
-	exit
+		exit
 	;;
 	[Rr]* ) Main
 	;;
