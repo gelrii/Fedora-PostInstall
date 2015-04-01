@@ -11,37 +11,37 @@ read opt
 case $opt in
 	[Yy]* ) echo "Installing Packages..."
 	yum install \
-		guake \
-		yum-cron \
 		clementine \
-		transgui \
-		htop \
-		nano \
-		tuned \
-		xchat \
-		vlc \
-		lm_sensors \
-		iotop \
-		iftop \
-		gcc \
-		kernel-headers \
-		kernel-devel \
-		gnome-disk-utility \
-		firefox \
-		thunderbird \
-		keepass \
-		remmina-plugins-rdp \
-		ffmpeg \
-		mkvtoolnix \
-		youtube-dl \
 		eog \
-		recordmydesktop \
-		gpg \
+		ffmpeg \
+		firefox \
+		gcc \
+		gdouros-symbola-fonts \
 		gimp \
-		wget \
+		gnome-disk-utility \
+		gpg \
+		guake \
+		htop \
+		iftop \
+		iotop \
+		keepass \
+		kernel-devel \
+		kernel-headers \
+		lm_sensors \
+		mkvtoolnix \
+		nano \
 		ntp \
+		recordmydesktop \
+		remmina-plugins-rdp \
+		thunderbird \
+		transgui \
+		tuned \
 		unrar \
-		gdouros-symbola-fonts
+		vlc \
+		wget \
+		xchat \
+		youtube-dl \
+		yum-cron
 	echo "Installed Packages."
 	Installer
 	;;
