@@ -1,17 +1,20 @@
 #!/bin/bash
 
 Minimal_Setup () {
+echo ""
 echo "Complete Minimal Useful Install Procedure?"
 echo ""
 echo "This section of the script will update the system"
 echo "and install a minimal set of useful packages,"
-echo "currently: \"htop, glances, wget, nano\"."
+echo "currently: \"glances, htop, nano, wget, yum-cron\"."
 echo ""
 echo "It will then enable SSH access, and remove most of"
 echo "the default GNOME packages to slim down the install as"
 echo "much as possible."
 echo ""
-echo "This section will not enable the RPMFusion repositories."
+echo "This section will not enable the RPMFusion"
+echo "repositories. If you are running the HTPC configuration"
+echo "script, these will have already been enabled."
 echo ""
 echo " [Y]es / [N]o"
 echo " "
@@ -21,7 +24,7 @@ case $opt in
 	[Yy]* ) echo "Working..."
 	echo "Updating System..."
 	  yum update -y
-	echo "Installing Useful HTPC Packages..."
+	echo "Installing (Minimal) Useful Packages..."
 	  yum install -y \
 	  	glances \
 	  	htop \
@@ -30,7 +33,7 @@ case $opt in
 	  	yum-cron
 	echo "Enabling SSH Access..."
 	  systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
-	echo "Removing Useless Packages..."
+	echo "Removing Non-Useful Packages..."
 	  yum remove -y \
 	  	amarok \
 	  	cheese \
