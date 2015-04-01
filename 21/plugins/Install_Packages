@@ -11,36 +11,36 @@ read opt
 case $opt in
 	[Yy]* ) echo "Installing Packages..."
 	yum install \
-	guake \\ # Quake-style drop-down terminal
-	yum-cron \\ # Enables scheduling of automatic updates
-	clementine \
-	transgui \\ # Remote GUI for Transmission BitTorrent client
-	htop \
-	nano \
-	tuned \
-	xchat \
-	vlc \
-	lm_sensors \
-	iotop \
-	iftop \
-	gcc \
-	kernel-headers \
-	kernel-devel \
-	gnome-disk-utility \\ # Install GDU for environments other than GNOME
-	firefox \
-	thunderbird \
-	keepass \
-	remmina-plugins-rdp \\ # Install Remmina GUI RDP client
-	ffmpeg mkvtoolnix \
-	youtube-dl \
-	eog \
-	recordmydesktop \
-	gpg \
-	gimp \
-	wget \
-	ntp \
-	unrar \
-	gdouros-symbola-fonts # Fonts to enable emoji support (http://fedoramagazine.org/how-to-get-emoji-to-display-on-fedora/)
+		guake \
+		yum-cron \
+		clementine \
+		transgui \
+		htop \
+		nano \
+		tuned \
+		xchat \
+		vlc \
+		lm_sensors \
+		iotop \
+		iftop \
+		gcc \
+		kernel-headers \
+		kernel-devel \
+		gnome-disk-utility \
+		firefox \
+		thunderbird \
+		keepass \
+		remmina-plugins-rdp \
+		ffmpeg mkvtoolnix \
+		youtube-dl \
+		eog \
+		recordmydesktop \
+		gpg \
+		gimp \
+		wget \
+		ntp \
+		unrar \
+		gdouros-symbola-fonts
 	echo "Installed Packages."
 	Installer
 	;;
