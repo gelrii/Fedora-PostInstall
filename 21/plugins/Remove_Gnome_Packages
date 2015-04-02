@@ -13,11 +13,10 @@ case $opt in
 	echo "Removed Useless GNOME Packages."
 	Main
 	;;
-	[Nn]* ) echo "Keeping All Packages."
+	[Nn]* ) echo "Continuing..."
 	Main
 	;;
-	[Qq]* ) echo "Exiting..."
-	exit
+	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
 	;;
