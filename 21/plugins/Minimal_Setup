@@ -31,8 +31,6 @@ case $opt in
 	  	nano \
 	  	wget \
 	  	yum-cron
-	echo "Enabling SSH Access..."
-	  systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
 	echo "Removing Non-Useful Packages..."
 	  yum remove -y \
 	  	amarok \
