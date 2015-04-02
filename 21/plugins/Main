@@ -48,7 +48,7 @@ case $opt in
 	;;
 #	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
 #	;; #Deprecated until Infinality repo available for Fedora 21
-	[Qq]* ) exit
+	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
 	;;
