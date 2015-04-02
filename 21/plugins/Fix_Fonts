@@ -19,8 +19,7 @@ case $opt in
 	[Nn]* ) echo "Continuing..."
 	Main
 	;;
-	[Qq]* ) echo "Exiting..."
-	exit
+	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
 	;;
