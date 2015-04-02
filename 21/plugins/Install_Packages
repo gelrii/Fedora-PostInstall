@@ -48,8 +48,7 @@ case $opt in
 	[Nn]* ) echo "Continuing..."
 	Installer
 	;;
-	[Qq]* ) echo "Exiting..."
-	exit
+	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
 	;;
