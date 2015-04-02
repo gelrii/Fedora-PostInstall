@@ -57,14 +57,14 @@ case $opt in
 	  	transmission*
 	echo "Cleaning Up..."
 	  yum autoremove -y
-	echo "Process Complete... Please Reboot System."
+	echo "Process Complete..."
+	echo "Please Reboot System."
 	Main
 	;;
-	[Nn]* ) echo "Exiting...."
+	[Nn]* ) echo "Continuing..."
 	Main
 	;;
-	[Qq]* ) echo "Exiting..."
-	exit
+	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
 	;;
