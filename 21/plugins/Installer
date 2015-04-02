@@ -27,7 +27,7 @@ case $opt in
 	;;
 	[Cc]* ) Install_Chrome
 	;;
-	[Qq]* ) exit
+	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
 	;;
