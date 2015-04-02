@@ -25,7 +25,7 @@ case $opt in
 	;;
 	[Pp]* ) Install_POL
 	;;
-	[Cc]* ) Install Google Chrome
+	[Cc]* ) Install_Chrome
 	;;
 	[Qq]* ) exit
 	;;
