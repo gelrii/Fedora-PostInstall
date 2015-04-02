@@ -14,8 +14,7 @@ case $opt in
 	;;
 	[Oo0]* ) Main
 	;;
-	[Qq]* ) echo "Exiting..."
-	exit
+	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
 	;;
