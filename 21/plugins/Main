@@ -3,18 +3,15 @@
 Main () {
 echo ""
 echo "Select an Option:"
-echo "[u] System Update"
-echo "[p] Remove Packages"
-echo "[r] Enable RPMFusion Repositories"
-echo "[i] Install Items"
-echo "[s] Enable SSH"
-echo "[b] Block Ads etc. with Custom Hosts File"
-echo "[h] Install as HTPC"
-echo "[d] Install Dotfiles (+ Dependencies)"
-echo "[m] Complete Minimal Setup (Automated)"
-echo "[v] Install VMware Guest Additions"
-echo "[x] Install VirtualBox Guest Additions"
-echo "[a] Enable Automatic Updates"
+echo "[1] System Update"
+echo "[2] Remove Packages"
+echo "[3] Enable RPMFusion Repositories"
+echo "[4] Install Items"
+echo "[5] Enable SSH"
+echo "[6] Block Ads etc. with Custom Hosts File"
+echo "[7] Install as HTPC"
+echo "[8] Complete Minimal Setup (Automated)"
+echo "[9] Enable Automatic Updates"
 echo ""
 echo "[q] Exit"
 #echo "7)Fix Fonts" #Deprecated until Infinality repo available for Fedora 21
@@ -22,29 +19,23 @@ echo ""
 echo -n "> "
 read opt
 case $opt in
-	[Uu]* ) System_Update
+	[1]* ) System_Update
 	;;
-	[Pp]* ) Desktop_Environment
+	[2]* ) Desktop_Environment
 	;;
-	[Rr]* ) Enable_RPMFusion
+	[3]* ) Enable_RPMFusion
 	;;
-	[Ii]* ) Installer
+	[4]* ) Installer
 	;;
-	[Ss]* ) Enable_SSH
+	[5]* ) Enable_SSH
 	;;
-	[Bb]* ) Hosts_Block
+	[6]* ) Hosts_Block
 	;;
-	[Hh]* ) Install_HTPC
+	[7]* ) Install_HTPC
 	;;
-	[Dd]* ) Dotfiles
+	[8]* ) Minimal_Setup
 	;;
-	[Mm]* ) Minimal_Setup
-	;;
-	[Vv]* ) VM_Guest
-	;;
-	[Xx]* ) VBox_Guest
-	;;	
-	[Aa]* ) AutoUpdate
+	[9]* ) AutoUpdate
 	;;
 #	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
 #	;; #Deprecated until Infinality repo available for Fedora 21
