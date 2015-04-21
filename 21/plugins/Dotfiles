@@ -2,7 +2,7 @@
 
 Dotfiles () {
 echo " "
-echo "Install asdf-git Dotfiles from GitHub?"
+echo "Install Gelrii Dotfiles dependancies from GitHub?"
 echo " [Y]es / [N]o"
 echo " "
 echo -n "> "
@@ -10,9 +10,6 @@ read opt
 case $opt in
 	[Yy]* ) echo "Installing Dotfile Dependancies..."
 	yum install -y wget lm_sensors phoronix-test-suite unrar recordmydesktop
-	echo "Installing..."
-	su $luser -c "sh /tmp/Fedora-PostInstall/21/assets/dotfiles.sh"
-  	echo "Installed Dotfiles"
 	Main
 	;;
 	[Nn]* ) echo "Continuing..."
