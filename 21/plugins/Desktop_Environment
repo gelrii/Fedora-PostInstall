@@ -3,16 +3,19 @@
 Desktop_Environment () {
 echo " "
 echo "Select Your Desktop Environment"
-echo "[K]DE / [G]NOME / [O]ther"
+echo "[1] KDE"
+echo "[2] GNOME"
+echo "[3] Other"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Kk]* ) Remove_KDE_Packages
+	[1]* ) Remove_KDE_Packages
 	;;
-	[Gg]* ) Remove_Gnome_Packages
+	[2]* ) Remove_Gnome_Packages
 	;;
-	[Oo0]* ) Main
+	[3]* ) echo "No other desktops supported by script"
+	Main
 	;;
 	[Qq]* ) Exit
 	;;
