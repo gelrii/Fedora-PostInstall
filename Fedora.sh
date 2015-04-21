@@ -2,7 +2,7 @@
 
 #Configure the GitHub user that the plugin scripts will be pulled from.
 #This is useful if you have forked the script and intend to customise your own plugins.
-gituser=asdf-git
+gituser=gelrii
 
 rm -rf /tmp/Fedora-PostInstall
 cd /tmp
