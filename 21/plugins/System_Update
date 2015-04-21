@@ -11,10 +11,10 @@ case $opt in
 	[Yy]* ) echo "Updating System..."
 	yum update
 	echo "Updated System."
-	Main
+	AutoUpdate
 	;;
 	[Nn]* ) echo "Continuing..."
-	Main
+	AutoUpdate
 	;;
 	[Qq]* ) Exit
 	;;
