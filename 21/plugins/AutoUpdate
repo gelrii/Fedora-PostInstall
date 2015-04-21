@@ -9,12 +9,12 @@ echo -n "> "
 read opt
 case $opt in
 	[Aa]* ) echo "Enabling All Updates..."
-	sudo yum install -y yum-cron && sudo wget -O /etc/yum/yum-cron.conf https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/21/assets/yum-cron-default.conf
+	sudo yum install -y yum-cron && sudo wget -O /etc/yum/yum-cron.conf https://raw.githubusercontent.com/gelrii/Fedora-PostInstall/master/21/assets/yum-cron-default.conf
 	echo "Enabled All Updates"
 	Main
 	;;
 	[Ss]* ) echo "Enabling Security Updates..."
-	sudo yum install -y yum-cron && sudo wget -O /etc/yum/yum-cron.conf https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/21/assets/yum-cron-security.conf
+	sudo yum install -y yum-cron && sudo wget -O /etc/yum/yum-cron.conf https://raw.githubusercontent.com/gelrii/Fedora-PostInstall/master/21/assets/yum-cron-security.conf
 	echo "Enabled Security Updates"
 	Main
 	;;
