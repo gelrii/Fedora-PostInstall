@@ -47,7 +47,6 @@ dir="$(dirname "$0")/$fvsupp/plugins"
 . $dir/Install_POL
 . $dir/Install_Chrome
 . $dir/Install_HTPC
-. $dir/Dotfiles
 . $dir/Minimal_Setup
 . $dir/VM_Guest
 . $dir/VBox_Guest
