@@ -50,6 +50,7 @@ dir="$(dirname "$0")/$fvsupp/plugins"
 . $dir/VM_Guest
 . $dir/VBox_Guest
 . $dir/AutoUpdate
+. $dir/Dotfiles
 
 until [ $continue = 0 ]; do
 	Start
