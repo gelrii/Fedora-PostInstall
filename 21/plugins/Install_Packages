@@ -4,12 +4,13 @@ Install_Packages () {
 echo " "
 echo "Install Useful Package Selection?"
 echo "(Some Packages Subject to Non-Free Licenses)"
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Installing Packages..."
+	[1]* ) echo "Installing Packages..."
 	yum install \
 		clementine \
 		eog \
@@ -45,7 +46,7 @@ case $opt in
 	echo "Installed Packages."
 	Installer
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	Installer
 	;;
 	[Qq]* ) Exit
