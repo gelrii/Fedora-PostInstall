@@ -3,8 +3,9 @@
 Remove_Gnome_Packages () {
 echo "GNOME Selected"
 echo "Remove (Mostly) Useless GNOME Packages?"
-echo " [Y]es / [N]o"
-echo " "
+echo "[1] Yes"
+echo "[2] No"
+echo ""
 echo -n "> "
 read opt
 case $opt in
