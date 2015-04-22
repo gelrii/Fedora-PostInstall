@@ -13,7 +13,7 @@ echo "[7] Install as HTPC"
 echo "[8] Complete Minimal Setup (Automated)"
 echo "[9] Enable Automatic Updates"
 echo ""
-echo "[q] Exit"
+echo "[Q] Quit"
 echo ""
 echo -n "> "
 read opt
