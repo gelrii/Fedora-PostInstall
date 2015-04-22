@@ -3,17 +3,18 @@
 System_Update () {
 echo " "
 echo "Update System?"
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Updating System..."
+	[1]* ) echo "Updating System..."
 	yum update
 	echo "Updated System."
 	AutoUpdate
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	AutoUpdate
 	;;
 	[Qq]* ) Exit
