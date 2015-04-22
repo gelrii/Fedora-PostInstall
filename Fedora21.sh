@@ -42,7 +42,6 @@ dir="$(dirname "$0")/$fvsupp/plugins"
 . $dir/Enable_SSH
 . $dir/Install_ZoL
 . $dir/Hosts_Block
-. $dir/Fix_Fonts
 . $dir/Install_ownCloud
 . $dir/Install_POL
 . $dir/Install_Chrome
