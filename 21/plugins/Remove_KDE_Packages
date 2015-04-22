@@ -3,17 +3,18 @@
 Remove_KDE_Packages () {
 echo "KDE Selected"
 echo "Remove (Mostly) Useless KDE Packages?"
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Removing..."
+	[1]* ) echo "Removing..."
 	yum remove gwenview dragon amarok
 	echo "Removed Useless KDE Packages."
 	Main
 	;;
-	[Nn]* ) echo "continuing..."
+	[2]* ) echo "continuing..."
 	Main
 	;;
 	[Qq]* ) Exit
