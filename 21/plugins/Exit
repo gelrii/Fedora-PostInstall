@@ -3,12 +3,13 @@
 Exit () {
 echo ""
 echo "Are you sure you wish to exit?"
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
 echo ""
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) clear
+	[1]* ) clear
 	clear
 	echo "           /:-------------:\             "
 	echo "        :-------------------::           "
@@ -30,7 +31,7 @@ case $opt in
 	echo ""
 	exit
 	;;
-	[Nn]* ) Main
+	[2]* ) Main
 	;;
 	[Qq]* ) exit
 	;;
