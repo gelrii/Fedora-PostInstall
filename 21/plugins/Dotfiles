@@ -2,17 +2,18 @@
 
 Dotfiles () {
 echo " "
-echo "Install Gelrii Dotfiles dependancies from GitHub?"
-echo " [Y]es / [N]o"
+echo "Install Gelriis Dotfile dependancies from GitHub?"
+echo "[1] Yes"
+echo "[2] No"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Installing Dotfile Dependancies..."
+	[1]* ) echo "Installing Dotfile Dependancies..."
 	yum install -y wget lm_sensors phoronix-test-suite unrar recordmydesktop
 	Main
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	Main
 	;;
 	[Qq]* ) Exit
