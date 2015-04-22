@@ -9,12 +9,12 @@ echo ""
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Removing..."
+	[1]* ) echo "Removing..."
 	yum remove rhythmbox empathy totem evolution shotwell cheese
 	echo "Removed Useless GNOME Packages."
 	Main
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	Main
 	;;
 	[Qq]* ) Exit
