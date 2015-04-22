@@ -3,17 +3,18 @@
 Enable_SSH () {
 echo " "
 echo "Enable and Start SSH Server?"
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Enabling SSH Server..."
+	[1]* ) echo "Enabling SSH Server..."
 	systemctl enable sshd.service && systemctl start sshd.service && systemctl status sshd.service
 	echo "Enabled SSH Server"
 	Main
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	Main
 	;;
 	[Qq]* ) Exit
