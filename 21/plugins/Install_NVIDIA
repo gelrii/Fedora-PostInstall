@@ -12,16 +12,18 @@ echo ""
 echo "Please also make sure you run the \"Update System\" option"
 echo "and reboot when it has completed, before running this option."
 echo ""
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
+echo ""
 echo -n "> "
 read opt
 case $opt in
-  [Yy]* ) echo "Installing Proprietary NVIDIA Drivers..."
+	[1]* ) echo "Installing Proprietary NVIDIA Drivers..."
 	yum install akmod-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 kernel-devel acpid vdpauinfo libva-vdpau-driver libva-utils && echo "Generating New initramfs..." && mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img && dracut /boot/initramfs-$(uname -r).img $(uname -r)
 	echo "NVIDIA Drivers Installed."
 	Installer
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	Installer
 	;;
 	[Qq]* ) Exit
