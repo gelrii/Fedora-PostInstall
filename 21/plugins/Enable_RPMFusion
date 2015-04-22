@@ -3,16 +3,17 @@
 Enable_RPMFusion () {
 echo " "
 echo "Enable Third-Party RPMFusion Repositories?"
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Enabling RPMFusion Repositories."
+	[1]* ) echo "Enabling RPMFusion Repositories."
 	su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 	Main
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	Main
 	;;
 	[Qq]* ) Exit
