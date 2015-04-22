@@ -14,7 +14,6 @@ echo "[8] Complete Minimal Setup (Automated)"
 echo "[9] Enable Automatic Updates"
 echo ""
 echo "[q] Exit"
-#echo "7)Fix Fonts" #Deprecated until Infinality repo available for Fedora 21
 echo ""
 echo -n "> "
 read opt
@@ -37,8 +36,6 @@ case $opt in
 	;;
 	[9]* ) AutoUpdate
 	;;
-#	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 21
-#	;; #Deprecated until Infinality repo available for Fedora 21
 	[Qq]* ) Exit
 	;;
 	[Rr]* ) Main
