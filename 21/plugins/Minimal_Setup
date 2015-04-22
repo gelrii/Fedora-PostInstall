@@ -16,12 +16,13 @@ echo "This section will not enable the RPMFusion"
 echo "repositories. If you are running the HTPC configuration"
 echo "script, these will have already been enabled."
 echo ""
-echo " [Y]es / [N]o"
+echo "[1] Yes"
+echo "[2] No"
 echo " "
 echo -n "> "
 read opt
 case $opt in
-	[Yy]* ) echo "Working..."
+	[1]* ) echo "Working..."
 	echo "Updating System..."
 	  yum update -y
 	echo "Installing (Minimal) Useful Packages..."
@@ -59,7 +60,7 @@ case $opt in
 	echo "Please Reboot System."
 	Main
 	;;
-	[Nn]* ) echo "Continuing..."
+	[2]* ) echo "Continuing..."
 	Main
 	;;
 	[Qq]* ) Exit
