@@ -3,8 +3,8 @@
 AutoUpdate () {
 echo " "
 echo "Enable Automatic Updates?"
-echo "[1] All Updates
-echo "[2] Security Updates Only
+echo "[1] All Updates"
+echo "[2] Security Updates Only"
 echo "[3] No"
 echo " "
 echo -n "> "
