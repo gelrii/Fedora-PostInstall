@@ -2,7 +2,7 @@
 
 Dotfiles () {
 echo " "
-echo "Install Gelriis Dotfile Dependancies from GitHub?"
+echo "Install Gelriis Dotfile Dependancies?"
 echo "[1] Yes"
 echo "[2] No"
 echo " "
