@@ -2,10 +2,10 @@
 
 #Configure the GitHub user that the plugin scripts will be pulled from.
 #This is useful if you have forked the script and intend to customise your own plugins.
-gituser=ajhaydock
+gituser=gelrii
 
-rm -rf /tmp/FedPo
+rm -rf /tmp/Fedora-Postinstall
 cd /tmp
-git clone -q https://github.com/$gituser/FedPo.git
-echo `whoami` > /tmp/FedPo/user
-sh /tmp/FedPo/Fedora$(rpm -E %fedora).sh
+git clone -q https://github.com/$gituser/Fedora-Postinstall.git
+echo `whoami` > /tmp/Fedora-Postinstall/user
+sh /tmp/Fedora-Postinstall/Fedora$(rpm -E %fedora).sh
