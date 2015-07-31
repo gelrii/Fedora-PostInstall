@@ -12,6 +12,7 @@ luser=$(< /tmp/Fedora-Postinstall/user) #Set the identity of the user who launch
 dir="$(dirname "$0")/$release/plugins"
 
 #Specify plugins here
+. $dir/ArcTheme
 . $dir/AutoUpdate
 . $dir/Dotfiles
 . $dir/Enable_RPMFusion
@@ -25,22 +26,22 @@ dir="$(dirname "$0")/$release/plugins"
 . $dir/Install_ownCloud
 . $dir/Install_Packages
 . $dir/Install_POL
+. $dir/Install_Steam
+. $dir/Install_TBB
+. $dir/Install_Tor
+. $dir/Install_VBox
 #. $dir/Install_ZoL ## Temporarily disabled
 . $dir/Installer
 . $dir/Main
 . $dir/Minimal_Setup
+. $dir/MPVConf
 . $dir/Remove_Useless
 . $dir/Start
 . $dir/System_Update
+. $dir/tbb
 . $dir/VBox_Guest
 . $dir/VM_Guest
-. $dir/Install_Steam
-. $dir/Install_TBB
-. $dir/ArcTheme
 . $dir/WindowButtons
-. $dir/MPVConf
-. $dir/Install_VBox
-. $dir/Install_Tor
 
 # Fedora Version Check
 if (( $(rpm -E %fedora) != $release )); then
