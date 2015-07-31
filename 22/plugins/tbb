@@ -1,5 +1,6 @@
 #!/bin/bash
 
+tbb() {
 # Make root .TBB/ directory if it doesn't exist, then attempt to remove any existing TBB installations in it
 echo "Attempting to remove old Tor Browser installations."
 echo "Please ignore any 'Not Found' error on the following line."
@@ -29,3 +30,4 @@ cd /$tbbdir/tor-browser_en-US/
 #sudo curl -o /etc/tor/torsocks.conf https://raw.githubusercontent.com/ajhaydock/FedPo/master/$(rpm -E %fedora)/assets/torsocks.conf
 # Return to Installer script
 Installer
+}
