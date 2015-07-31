@@ -1,0 +1,34 @@
+#!/bin/bash
+
+VBox_Guest () {
+echo " "
+echo "Install VirtualBox Guest Additions?"
+echo ""
+echo "This is intended for use on Fedora systems"
+echo "installed INSIDE a Virtual Machine."
+echo ""
+echo "Please enable the RPMFusion repositories"
+echo "before using this option."
+echo ""
+echo "You are also required to run a system update"
+echo "AND REBOOT before running this plugin."
+echo ""
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+  [Yy]* ) echo "Installing VMware Guest Additions..."
+  sudo dnf install VirtualBox-guest
+  echo "Installed VirtualBox Guest Additions"
+  Installer
+  ;;
+  [Nn]* ) echo "Continuing..."
+  Installer
+  ;;
+  [Qq]* ) Exit
+  ;;
+  [Rr]* ) Installer
+  ;;
+esac
+}

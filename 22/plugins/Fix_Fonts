@@ -1,0 +1,27 @@
+#!/bin/bash
+
+Fix_Fonts () {
+echo " "
+echo "Install Infinality to Improve Font Render Quality?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing Infinality..."
+	# Note to script maintainers: The first command in the below line will need updating when the repo is updated.
+	# Check this page every so often to see if there have been updates: http://www.infinality.net/blog/infinality-repository/
+	rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm && dnf install freetype-infinality fontconfig-infinality
+	echo "Installed Infinality."
+	echo "Changes to font rendering may not be visible until a reboot."
+	Main
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

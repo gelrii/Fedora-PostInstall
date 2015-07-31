@@ -1,0 +1,51 @@
+#!/bin/bash
+
+ArcTheme () {
+echo ""
+echo "Install Arc Theme from horst3180 on GitHub?"
+echo ""
+echo "After installation, the theme will be enabled automatically"
+echo "you can manage GTK themes from Gnome Tweak Tool, or from"
+echo "similar applications."
+echo ""
+echo " [Y]es / [N]o"
+echo ""
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Enabling Arc Theme."
+	# Ensure required packages are installed
+	sudo dnf install -y \
+	    gtk-murrine-engine \
+	    autoconf \
+	    automake \
+	    pkgconfig \
+	    gtk3-devel
+	    
+	# Remove old theme versions
+	sudo rm -rf /usr/share/themes/Arc
+	rm -rf $HOME/.local/share/themes/Arc
+	rm -rf $HOME/.themes/Arc
+
+	# Clone git repo
+	cd /tmp && git clone https://github.com/horst3180/arc-theme --depth 1
+	
+	# Build and install
+	sh /tmp/arc-theme/autogen.sh --prefix=/usr
+	sudo make install
+	
+	# Set Arc as current GTK theme
+	gsettings set org.gnome.desktop.interface gtk-theme "Arc"
+	
+	# Return to main script
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Installer
+	;;
+esac
+}

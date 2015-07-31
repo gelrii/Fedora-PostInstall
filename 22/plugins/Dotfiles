@@ -1,0 +1,32 @@
+#!/bin/bash
+
+Dotfiles () {
+echo " "
+echo "Import Dotfiles from GitHub?"
+echo "(Note: Dotfiles must be named 'dotfiles')"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Please enter the requested GitHub username"
+		echo -n "> "
+		read gituser
+		echo "Installing Dotfiles..."
+		mkdir -p $HOME/.gitdotfiles/
+		cd $HOME/.gitdotfiles/
+		git clone https://github.com/$gituser/dotfiles.git
+		cd $HOME/.gitdotfiles/dotfiles/
+		sh install.sh
+		echo "Installed Dotfiles"
+	Main
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

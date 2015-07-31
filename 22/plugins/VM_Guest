@@ -1,0 +1,31 @@
+#!/bin/bash
+
+VM_Guest () {
+echo " "
+echo "Install VMware Guest Additions?"
+echo ""
+echo "This is intended for use on Fedora systems"
+echo "installed INSIDE a Virtual Machine."
+echo ""
+echo "Please complete an update-and-reboot cycle"
+echo "before using this option."
+echo ""
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing VMware Guest Additions..."
+	sudo dnf install open-vm-tools open-vm-tools-desktop
+	echo "Installed VMware Guest Additions"
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Installer
+	;;
+esac
+}

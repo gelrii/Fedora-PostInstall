@@ -1,0 +1,113 @@
+#!/bin/bash
+Install_TBB () {
+echo ""
+echo "Install Tor Browser Bundle?"
+echo ""
+echo "This will overwrite any Tor Browser Bundle that already"
+echo "exists in your target directory!"
+echo ""
+echo " [Y]es / [N]o"
+echo -n "> "
+read opt
+case $opt in
+  [Yy]* ) echo "Installing Tor Browser Bundle..."
+  # Remove old downloads of TBB (recursive!)
+  	  echo "Attempting to remove old Tor Browser downloads."
+  	  echo "Please ignore any 'Not Found' error on the following line."
+  	  sudo rm /tmp/tbb*
+  	  sudo rm -r /tmp/tor-browser_en-US/
+	  echo ""	  
+  # Work out current TBB version and set a variable to this value
+  ## Cut command selects everything within " characters
+  ## Awk command selects only line number 2 (which should contain the current version number)
+	  tbbver="$(wget -q https://www.torproject.org/projects/torbrowser/RecommendedTBBVersions -O /tmp/TBB.txt && cat /tmp/TBB.txt | cut -d\" -f2 | awk 'NR==2')"
+	  echo "Downloading Tor Browser Bundle version: $tbbver"
+  # Download the appropriate package(s) for this OS
+	  wget "https://www.torproject.org/dist/torbrowser/$tbbver/tor-browser-linux64-`echo $tbbver`_en-US.tar.xz" -O /tmp/tbb-$tbbver.tar.xz
+	  wget -q "https://www.torproject.org/dist/torbrowser/$tbbver/tor-browser-linux64-`echo $tbbver`_en-US.tar.xz.asc" -O /tmp/tbb-$tbbver.asc
+  # Verify TBB signature
+  ## TODO: Fail whole script if signature verification fails
+	  gpg --keyserver x-hkp://pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290
+	  gpg --verify /tmp/tbb-$tbbver.asc /tmp/tbb-$tbbver.tar.xz
+  # Unpack download
+	  cd /tmp
+	  tar -xvf /tmp/tbb-$tbbver.tar.xz
+  # Sync unpacked TBB to appropriate location
+	  echo ""
+	  echo "Where do you wish to unpack the Tor Browser Bundle?"
+	  echo ""
+	  echo "[h] /home/$luser/.TBB/tor-browser_en-US/"
+	  echo "[d] /home/$luser/Downloads/.TBB/tor-browser_en-US/"
+	  echo -n "> "
+	  read loc
+	  case $loc in
+	    [Hh]* ) echo "Unpacking to /home/$luser/.TBB/tor-browser_en-US/"
+		  tbbdir="home/$luser/.TBB"
+	  # Make root .TBB/ directory if it doesn't exist, then attempt to remove any existing TBB installations in it
+	  echo "Attempting to remove old Tor Browser installations."
+  	  echo "Please ignore any 'Not Found' error on the following line."
+		  mkdir -p /$tbbdir
+		  rm -r /$tbbdir/tor-browser_en-US/
+	  # rsync to destination dir
+		  rsync -avsh /tmp/tor-browser_en-US/ /$tbbdir/tor-browser_en-US/
+	  # Set permissions, just to make sure
+	  	  sudo chown -R `id -un`:`id -gn` /$tbbdir
+	  	  sudo chmod 770 -R /$tbbdir
+	  # Remove already registered TBB applications from app menu
+	  	  sudo rm /home/$luser/.local/share/applications/start-tor-browser.desktop
+  	  # Register TBB as an application in the applications menu
+  	  	  echo ""
+  	  	  echo "#####"
+  	  	  echo "Registering Tor Browser application."
+  	  	  echo "If this step appears to hang after confirming success, try pressing Ctrl + C to continue the script."
+  	  	  echo "#####"
+  	  	  echo ""
+	  	  cd /$tbbdir/tor-browser_en-US/
+		  ./start-tor-browser.desktop --register-app
+	  # Open ControlPort to allow monitoring with Arm
+	  ## (Feature Deprecated - This can be accomplished with "arm -i 9151" already)
+  	  	  #echo "DisableDebuggerAttachment 0" >> /$tbbdir/tor-browser_en-US/Browser/TorBrowser/Data/Tor/torrc
+	  	  #echo "ControlPort 9501" >> /$tbbdir/tor-browser_en-US/Browser/TorBrowser/Data/Tor/torrc
+	  # Install torsocks & tor-arm to allow monitoring & proxying of other system applications
+	  	  sudo dnf install -y torsocks tor-arm
+	  # Download appropriate config for use with TBB
+	  	  sudo rm /etc/tor/torsocks.conf
+		  sudo curl -o /etc/tor/torsocks.conf https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/22/assets/torsocks.conf
+	  # Return to main script
+		  Installer
+	  ;;
+	    [Dd]* ) echo "Unpacking to /home/$luser/Downloads/.TBB/tor-browser_en-US/"
+		  tbbdir="home/$luser/Downloads/.TBB"
+	  # Make root .TBB/ directory if it doesn't exist, then attempt to remove any existing TBB installations in it
+	  echo "Attempting to remove old Tor Browser installations."
+  	  echo "Please ignore any 'Not Found' error on the following line."
+		  mkdir -p /$tbbdir
+		  rm -r /$tbbdir/tor-browser_en-US/
+	  # rsync to destination dir
+		  rsync -avsh /tmp/tor-browser_en-US/ /$tbbdir/tor-browser_en-US/
+	  # Set permissions, just to make sure
+	  	  sudo chown -R `id -un`:`id -gn` /$tbbdir
+	  	  sudo chmod 770 -R /$tbbdir
+	  # Remove already registered TBB applications from app menu
+	  	  sudo rm /home/$luser/.local/share/applications/start-tor-browser.desktop
+  	  # Register TBB as an application in the applications menu
+  	  	  echo ""
+  	  	  echo "#####"
+  	  	  echo "Registering Tor Browser application."
+  	  	  echo "If this step appears to hang after confirming success, try pressing Ctrl + C to continue the script."
+  	  	  echo "#####"
+  	  	  echo ""
+	  	  cd /$tbbdir/tor-browser_en-US/
+		  ./start-tor-browser.desktop --register-app
+	  # Install torsocks & tor-arm to allow monitoring & proxying of other system applications
+	  ## (DEPRECATED: Now set up to use default config and Tor service instead)
+	  	  #sudo dnf install -y torsocks tor-arm
+	  # Download appropriate config for use with TBB
+	  	  #sudo rm /etc/tor/torsocks.conf
+		  #sudo curl -o /etc/tor/torsocks.conf https://raw.githubusercontent.com/ajhaydock/FedPo/master/$(rpm -E %fedora)/assets/torsocks.conf
+	  # Return to main script
+		  Installer
+	  ;;
+	  esac
+esac
+}

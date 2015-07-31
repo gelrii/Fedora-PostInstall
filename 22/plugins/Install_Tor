@@ -1,0 +1,34 @@
+#!/bin/bash
+
+Install_Tor () {
+echo " "
+echo "Install Tor Service?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing Tor..."
+	
+	# Install Tor Packages
+	sudo dnf install tor torsocks tor-arm
+	
+	# Start Tor Service
+	sudo systemctl start tor
+	
+	# Enable AutoStart on Boot for Tor Service
+	sudo systemctl enable tor
+	
+	# Finish
+	echo "Installed Tor."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

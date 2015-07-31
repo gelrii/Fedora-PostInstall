@@ -1,0 +1,24 @@
+#!/bin/bash
+
+System_Update () {
+echo " "
+echo "Update System?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Updating System..."
+	sudo dnf upgrade
+	echo "Updated System."
+	Main
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

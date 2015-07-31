@@ -1,0 +1,50 @@
+#!/bin/bash
+
+Main () {
+echo ""
+echo "Select an Option:"
+echo "[U] System Update"
+echo "[P] Remove Packages"
+echo "[R] Enable RPMFusion Repositories"
+echo "[I] Install Items"
+echo "[S] Enable SSH"
+echo "[B] Block Ads etc. with Custom Hosts File"
+echo "[H] Install as HTPC (Automated)"
+echo "[D] Install Dotfiles (+ Dependencies)"
+echo "[M] Complete Minimal Setup (Automated)"
+# echo "[a] Enable Automatic Updates" ## Deprecated until yum-cron is replaced with dnf version
+# echo "[f] Improve Font Rendering Quality" ## Deprecated until Infinality repo is available for Fedora 22
+echo ""
+echo "[Q] Exit"
+echo ""
+echo -n "> "
+read opt
+case $opt in
+	[Uu]* ) System_Update
+	;;
+	[Pp]* ) Remove_Useless
+	;;
+	[Rr]* ) Enable_RPMFusion
+	;;
+	[Ii]* ) Installer
+	;;
+	[Ss]* ) Enable_SSH
+	;;
+	[Bb]* ) Hosts_Block
+	;;
+	[Hh]* ) Install_HTPC
+	;;
+	[Dd]* ) Dotfiles
+	;;
+	[Mm]* ) Minimal_Setup
+	;;
+#	[Aa]* ) AutoUpdate
+#	;; ## Deprecated until yum-cron is replaced with dnf version
+#	[Ff]* ) Fix_Fonts #Deprecated until Infinality repo available for Fedora 22
+#	;; ## Deprecated until Infinality repo available for Fedora 22
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

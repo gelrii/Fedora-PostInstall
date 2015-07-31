@@ -1,0 +1,76 @@
+#!/bin/bash
+
+Minimal_Setup () {
+echo ""
+echo "Complete Minimal Useful Install Procedure?"
+echo ""
+echo "This section of the script will update the system"
+echo "and install a minimal set of useful packages,"
+echo "currently: \"glances, htop, nano, wget, yum-cron\"."
+echo ""
+echo "It will then enable SSH access, and remove most of"
+echo "the default GNOME packages to slim down the install as"
+echo "much as possible."
+echo ""
+echo "This section will not enable the RPMFusion"
+echo "repositories. If you are running the HTPC configuration"
+echo "script, these will have already been enabled."
+echo ""
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Working..."
+	echo "Updating System..."
+	  sudo dnf upgrade -y
+	echo "Installing (Minimal) Useful Packages..."
+	  sudo dnf install -y \
+	  	fail2ban \
+	  	fuse-sshfs \
+	  	htop \
+	  	lm_sensors \
+	  	nano \
+	  	screen \
+	  	wget
+	echo "Removing Non-Useful Packages..."
+	  sudo dnf remove -y \
+	  	amarok \
+	  	bijiben \
+	  	cheese \
+	  	devassistant \
+	  	devassistant-gui \
+	  	dragon \
+	  	empathy \
+	  	evolution \
+	  	firefox \
+	  	gnome-boxes \
+	  	gnome-contacts \
+	  	gnome-documents \
+	  	gnome-maps \
+	  	gnome-software \
+	  	gnome-weather \
+	  	gwenview \
+	  	"java*" \
+	  	k3b \
+	  	"libreoffice*" \
+	  	rhythmbox \
+	  	shotwell \
+	  	totem \
+	  	"transmission*" \
+	  	xchat
+	echo "Cleaning Up..."
+	  sudo dnf autoremove -y
+	echo "Process Complete..."
+	echo "Please Reboot System."
+	Main
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

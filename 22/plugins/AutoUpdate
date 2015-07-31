@@ -1,0 +1,29 @@
+#!/bin/bash
+
+AutoUpdate () {
+echo " "
+echo "Enable Automatic Updates?"
+echo " [A]ll Updates / [S]ecurity Updates Only / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Aa]* ) echo "Enabling All Updates..."
+	sudo dnf install -y yum-cron && sudo wget -O /etc/yum/yum-cron.conf https://raw.githubusercontent.com/ajhaydock/FedPo/master/$(rpm -E %fedora)/assets/yum-cron-default.conf
+	echo "Enabled All Updates"
+	Main
+	;;
+	[Ss]* ) echo "Enabling Security Updates..."
+	sudo dnf install -y yum-cron && sudo wget -O /etc/yum/yum-cron.conf https://raw.githubusercontent.com/ajhaydock/FedPo/master/$(rpm -E %fedora)/assets/yum-cron-security.conf
+	echo "Enabled Security Updates"
+	Main
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+WindowButtons () {
+echo " "
+echo "Modify GNOME Window Button Layout?"
+echo ""
+echo "[0] Restore Defaults (Right-Aligned: Close)"
+echo "[1] MS Windows Style (Right-Aligned: Minimize, Maximize, Close)"
+echo "[2] Apple OS X Style (Left-Aligned : Close, Maximize, Minimise)"
+echo ""
+echo -n "> "
+read opt
+case $opt in
+	[0]* ) echo "Restoring Default Button Layout..."
+	gsettings set org.gnome.desktop.wm.preferences button-layout '":close"'
+	echo "Complete"
+	Installer
+	;;
+	[1]* ) echo "Enabling Windows Style Button Layout..."
+	gsettings set org.gnome.desktop.wm.preferences button-layout '":minimize,maximize,close"'
+	echo "Complete"
+	Installer
+	;;
+	[2]* ) echo "Enabling OS X Style Button Layout..."
+	gsettings set org.gnome.desktop.wm.preferences button-layout '"close,maximize,minimize:"'
+	echo "Complete"
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Installer
+	;;
+esac
+}

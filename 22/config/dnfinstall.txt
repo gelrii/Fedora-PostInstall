@@ -1,0 +1,144 @@
+# Desktop Applications
+ clementine
+ eog
+ gnome-disk-utility
+ gnome-power-manager
+ guake
+ hexchat
+ icecat
+ keepass
+ thunderbird
+ transgui
+ transmission-qt
+
+# Command-Line Programs & System Utilities
+ aria2
+ beep
+ bzip2
+ fail2ban
+ fuse-sshfs
+ gdouros-symbola-fonts
+ glances
+ gpg
+ htop
+ iotop
+ lm_sensors
+ macchanger
+ nano
+ nload
+ ntp
+ p7zip
+ powertop
+ recordmydesktop
+ redshift
+ screen
+ smartmontools
+ sushi
+ sysstat
+ tuned
+ tuned-utils
+ unoconv
+ unrar
+ wget
+ xfreerdp
+ xlockmore
+
+# Multimedia Tools & Codecs
+ ffmpeg
+ get_iplayer
+ gstreamer
+ gstreamer-ffmpeg
+ gstreamer-plugins-bad
+ gstreamer-plugins-bad-free
+ gstreamer-plugins-bad-free-extras
+ gstreamer-plugins-base
+ gstreamer-plugins-good
+ gstreamer-plugins-ugly
+ livestreamer
+ mediainfo
+ mpv
+ rtmpdump
+ vlc
+ youtube-dl
+
+# Package-Building Tools: General
+ alsa-lib-devel
+ aspell-devel
+ autoconf
+ automake
+ avahi-compat-libdns_sd-devel
+ boost-devel
+ bzip2-devel
+ bzr
+ cmake
+ cmake-gui
+ gcc
+ gcc-c++
+ gtk-murrine-engine
+ gtk2
+ gtk2-devel
+ gtk3
+ gtk3-devel
+ kernel-devel
+ kernel-headers
+ kernel-tools
+ libcap-devel
+ libdaemon-devel
+ libglade2
+ libglade2-devel
+ libidn-devel
+ libnotify-devel
+ libsndfile-devel
+ libusb-devel
+ lua-devel
+ make
+ maven
+ miniupnpc-devel
+ nodejs
+ openssl-devel
+ pkgconfig
+ protobuf-compiler
+ protobuf-devel
+ rpmdevtools
+ ruby-devel
+ rubygems
+ scons
+ speech-dispatcher-devel
+ qt
+ qt-devel
+ qt3-devel
+ qt5-qtsvg
+ qt5-qttools-devel
+ qt5-qttranslations
+ wxGTK
+ wxWidgets
+ 
+# Package-Building Tools: Kernel
+## Everything required to build a full kernel from Source. Tested with kernel branch origin/master on 2015-07-14.
+ audit-libs-devel
+ binutils-devel
+ bison
+ elfutils-devel
+ fedora-packager
+ fedpkg
+ flex
+ gcc-c++
+ hmaccalc
+ libXi-devel
+ ncurses-devel
+ newt-devel
+ numactl-devel
+ pciutils-devel
+# perl-ExtUtils-* ##This line causes whole script to fail for some reason (wildcard?)
+ pesign
+ python-devel
+ qt3-devel
+ rpmdevtools
+ 
+# Desktop Environment Switching Tools
+ switchdesk
+ system-switch-displaymanager
+
+# Entertainment
+ cowsay
+ figlet

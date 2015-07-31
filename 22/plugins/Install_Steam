@@ -1,0 +1,44 @@
+#!/bin/bash
+Install_Steam () {
+echo ""
+echo "Install Proprietary Steam Client?"
+echo ""
+echo "Please make sure to run the option to enable the RPMFusion"
+echo "repositories before running this option."
+echo ""
+echo " [Y]es / [N]o"
+echo -n "> "
+read opt
+case $opt in
+[Yy]* ) echo "Installing Steam..."
+  
+  	# Enable negativo17.org Steam Repo
+		sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo
+	
+	# Install Steam
+		## Install libtxc_dxtn.x86_64 to improve compatibility with OSS drivers
+		## Install 32-bit libva-intel-driver and libvdpau packages to allow hardware decoding for in-home-streaming video streams
+		## Install steamos-session and steamos-modeswitch-inhibitor.i686 to allow logging into a "SteamOS Session"
+		## Install 32-bit libdrm and mesa-libglapi packages to fix issues with Trine 2 - probably required for other games too. (See: https://steamcommunity.com/app/35720/discussions/0/846944689787455213/#c846945411128998516)
+		## Install xboxdrv to allow use of XBox/PS3 game controllers with Steam
+		sudo dnf install steam libtxc_dxtn.x86_64 libva-intel-driver.i686 libvdpau.i686 steamos-session steamos-modeswitch-inhibitor.i686 libdrm.i686 mesa-libglapi.i686 xboxdrv
+	
+	# Allow in-home streaming through firewall
+		sudo firewall-cmd --zone=public --add-service=steam --permanent
+	
+	# Prevent SELinux from killing Big Picture when it is launched
+		sudo setsebool -P allow_execheap 1
+	
+	# Finish
+	echo "Steam Client Installed."
+	Installer
+	;;
+[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+[Qq]* ) Exit
+	;;
+[Rr]* ) Main
+	;;
+esac
+}

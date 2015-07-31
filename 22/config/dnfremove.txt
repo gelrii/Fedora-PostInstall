@@ -1,0 +1,16 @@
+# Remove General
+ amarok
+ cheese
+ devassistant
+ devassistant-gui
+ dragon
+ dragon-player
+ empathy
+ evolution
+ gwenview
+ rhythmbox
+ shotwell
+ totem
+ xchat
+# Remove GNOME Boxes Until it Matures as Software
+ gnome-boxes

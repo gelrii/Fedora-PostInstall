@@ -1,0 +1,26 @@
+#!/bin/bash
+
+Install_ownCloud () {
+echo " "
+echo "Install ownCloud Desktop Sync Client?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing ownCloud..."
+	cd /etc/yum.repos.d/
+	sudo wget http://download.opensuse.org/repositories/isv:ownCloud:desktop/Fedora_21/isv:ownCloud:desktop.repo -O isv:ownCloud:desktop.repo
+	sudo dnf install owncloud-client
+	echo "Installed ownCloud."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

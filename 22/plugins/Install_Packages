@@ -1,0 +1,31 @@
+#!/bin/bash
+
+Install_Packages () {
+echo " "
+echo "Install Useful Package Selection?"
+echo "(Some Packages Subject to Non-Free Licenses)"
+echo ""
+echo "Please make sure to run the option to enable the RPMFusion"
+echo "repositories before running this option."
+echo ""
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing Packages..."
+	# sed command removes all lines beginning with '#' character (indicating comment lines)
+	# tr command removes all line breaks (\n) from downloaded file and pipes the outputted single-line list into dnf
+	cat /tmp/Fedora-Postinstall/$release/config/dnfinstall.txt | sed '/^#/d' | tr -d '\n' > /tmp/Fedora-Postinstall/$(rpm -E %fedora)/config/dnfinstall-stripped.txt && sudo dnf install `cat /tmp/Fedora-Postinstall/$release/config/dnfinstall-stripped.txt`
+	echo "Installed Packages."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

@@ -1,0 +1,57 @@
+#!/bin/bash
+Install_NVIDIA () {
+echo ""
+echo "Install Proprietary NVIDIA Drivers?"
+echo ""
+echo "This option is intended for people running a machine with"
+echo "NVIDIA GeForce 200/300/400/500/600/700/900 series cards."
+echo ""
+echo "Please make sure to run the option to enable the RPMFusion"
+echo "repositories before running this option."
+echo ""
+echo "Please also make sure you run the \"Update System\" option"
+echo "and reboot when it has completed, before running this option."
+echo ""
+echo " [Y]es / [N]o"
+echo -n "> "
+read opt
+case $opt in
+  [Yy]* ) echo "Installing Proprietary NVIDIA Drivers..."
+
+  	# Remove old drivers, if present from a previous installation
+  	sudo dnf remove \*nvidia\*
+  	
+  	# Install the nvidia-driver package
+  	## Install the akmod-nvidia and kernel-devel packages to automatically build kernel modules for newly released kernels.
+  	## Install the 32-bit nvidia-driver-libs package to allow for greater compatibility with games and Steam.
+  	## Install the cuda and cuda-devel packages to allow the use of CUDA.
+  	## Install a selection of packages (vdpauinfo libva-vdpau-driver libva-utils) to assist with hardware video decoding.
+  	sudo dnf install \
+  		acpid \
+  		akmod-nvidia \
+  		libva-utils \
+  		libva-vdpau-driver \
+  		vdpauinfo \
+  		xorg-x11-drv-nvidia-cuda \
+  		xorg-x11-drv-nvidia-cuda.i686 \
+  		xorg-x11-drv-nvidia-libs.i686 \
+  		kernel-devel-$(uname -r)
+  	
+  	## Rebuilding initramfs not required in RPMFusion guide (http://rpmfusion.org/Howto/nVidia)
+  	#echo "Generating New initramfs..."
+	#sudo mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+	#sudo dracut /boot/initramfs-$(uname -r).img $(uname -r)
+	
+	# Finish
+	echo "NVIDIA Drivers Installed."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

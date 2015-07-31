@@ -1,0 +1,37 @@
+#!/bin/bash
+
+Install_VBox () {
+echo " "
+echo "Install Oracle VirtualBox?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing VirtualBox..."
+	
+	# Remove Old Versions (If Applicable)
+	sudo dnf remove VirtualBox VirtualBox-4* kmod-VirtualBox akmod-VirtualBox
+	
+	# Install Official Oracle Repo
+	sudo curl -o /etc/yum.repos.d/virtualbox.repo http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+	
+	# Install VBox Package (Package name will need updating when it changes)
+	sudo dnf install VirtualBox-5.0
+	
+	# Compile VirtualBox kernel modules for currently running kernel
+	sudo /etc/init.d/vboxdrv setup
+	
+	# Finish
+	echo "Installed VirtualBox."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+Install_Chrome () {
+echo " "
+echo "Install Google Chrome? [Non-Free Software!]"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Installing Google Chrome..."
+	sudo dnf config-manager --add-repo=https://raw.githubusercontent.com/asdf-git/Fedora-PostInstall/master/$(rpm -E %fedora)/assets/google-chrome.repo
+	sudo dnf install google-chrome-stable
+	echo "Installed Google Chrome."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

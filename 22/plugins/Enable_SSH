@@ -1,0 +1,34 @@
+#!/bin/bash
+
+Enable_SSH () {
+echo " "
+echo "Enable and Start SSH Server?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Enabling SSH Server..."
+	# Enable and start SSH daemon
+	  sudo systemctl enable sshd
+	  sudo systemctl start sshd
+	  systemctl status sshd
+	# Create (empty) file that is required for X forwarding over SSH
+	  touch $HOME/.Xauthority
+	# Install and enable fail2ban
+	  sudo dnf install fail2ban
+	  sudo systemctl enable fail2ban
+	  sudo systemctl start fail2ban
+	  systemctl status fail2ban
+	echo "Enabled SSH Server"
+	Main
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

@@ -1,0 +1,55 @@
+#!/bin/bash
+
+## This is the negativo17.org version of the NVIDIA driver installation script.
+## It has been disabled due to some odd quirks that crash GNOME on newer kernels, but is still archived in the form of this file.
+
+Install_NVIDIA () {
+echo ""
+echo "Install Proprietary NVIDIA Drivers?"
+echo ""
+echo "This option is intended for people running a machine with"
+echo "NVIDIA GeForce 200/300/400/500/600/700/900 series cards."
+echo ""
+echo "Please make sure to run the option to enable the RPMFusion"
+echo "repositories before running this option."
+echo ""
+echo "Please also make sure you run the \"Update System\" option"
+echo "and reboot when it has completed, before running this option."
+echo ""
+echo " [Y]es / [N]o"
+echo -n "> "
+read opt
+case $opt in
+  [Yy]* ) echo "Installing Proprietary NVIDIA Drivers..."
+  	
+  	# Enable negativo17.org Repository
+  	sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-nvidia.repo
+  	
+  	# Remove old drivers, if present from a previous installation
+  	sudo dnf remove \*nvidia\*
+  	
+  	# Install the nvidia-driver package
+  	## Install the akmod-nvidia and kernel-devel packages to automatically build kernel modules for newly released kernels.
+  	## Install the 32-bit nvidia-driver-libs package to allow for greater compatibility with games and Steam.
+  	## Install the cuda and cuda-devel packages to allow the use of CUDA.
+  	## Install a selection of packages (vdpauinfo libva-vdpau-driver libva-utils) to assist with hardware video decoding.
+  	sudo dnf install nvidia-driver akmod-nvidia kernel-devel nvidia-driver-libs.i686 cuda cuda-devel acpid vdpauinfo libva-vdpau-driver libva-utils
+  	
+  	## [Rebuilding initramfs no longer required with negativo17 repo]
+  	#echo "Generating New initramfs..."
+	#sudo mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+	#sudo dracut /boot/initramfs-$(uname -r).img $(uname -r)
+	
+	# Finish
+	echo "NVIDIA Drivers Installed."
+	Installer
+	;;
+	[Nn]* ) echo "Continuing..."
+	Installer
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}

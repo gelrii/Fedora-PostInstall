@@ -1,0 +1,54 @@
+#!/bin/bash
+
+Install_HTPC () {
+echo "Complete Steps Necessary to Install Fedora HTPC?"
+echo " [Y]es / [N]o"
+echo " "
+echo -n "> "
+read opt
+case $opt in
+	[Yy]* ) echo "Working..."
+	echo "Enabling RPMFusion Repositories..."
+	sudo dnf install -y --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+	echo "Installing Kodi..."
+	echo "Enabling SSH Access..."
+	sudo systemctl enable sshd
+	sudo systemctl start sshd
+	echo "Hardening SSH..."
+	sudo systemctl enable fail2ban
+	sudo systemctl start fail2ban
+	#Install useful HTPC packages
+	sudo dnf -y install \
+		ffmpeg \
+		fuse-sshfs \
+		get_iplayer \
+		gstreamer \
+		gstreamer-ffmpeg \
+		gstreamer-plugins-bad \
+		gstreamer-plugins-bad-free \
+		gstreamer-plugins-bad-free-extras \
+		gstreamer-plugins-good \
+		gstreamer-plugins-ugly \
+		htop \
+		iftop \
+		iotop \
+		kernel-tools \
+		kodi \
+		livestreamer \
+		lm_sensors \
+		nano \
+		tuned \
+		wget \
+		youtube-dl
+	echo "Kodi installed... Beginning Minimal Setup..."
+	Minimal_Setup
+	;;
+	[Nn]* ) echo "Continuing..."
+	Main
+	;;
+	[Qq]* ) Exit
+	;;
+	[Rr]* ) Main
+	;;
+esac
+}
